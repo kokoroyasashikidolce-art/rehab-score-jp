@@ -7,7 +7,7 @@ export default function ScoreCalculator({
   scale,
   copyHistoryLimit = 50,
 }) {
-  
+
   const initialScores = {};
   const STORAGE_KEY = `rehab-score-data-${scale.id}`;
 
@@ -283,7 +283,7 @@ return (
       <CopyResultButton
         title={scale.shortTitle || scale.title}
         text={copyText}
-        historyLimit={settings.copyHistoryLimit}
+        historyLimit={copyHistoryLimit}
       />
     </>
   );
