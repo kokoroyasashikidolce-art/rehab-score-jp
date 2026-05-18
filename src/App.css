@@ -659,3 +659,6 @@ button {
 .font-large .card p {
   font-size: 1rem;
 }
+.segment-large {
+  font-size: 1.15rem;
+}

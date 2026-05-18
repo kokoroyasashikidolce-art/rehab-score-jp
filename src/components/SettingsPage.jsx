@@ -42,8 +42,8 @@ export default function SettingsPage({
       <button
         className={
           settings.fontSizeMode === "large"
-            ? "segment active"
-            : "segment"
+            ? "segment active segment-large"
+            : "segment segment-large"
         }
         onClick={() =>
           onUpdateSettings({
