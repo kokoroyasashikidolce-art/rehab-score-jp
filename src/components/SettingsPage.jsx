@@ -42,15 +42,21 @@ export default function SettingsPage({
       </small>
     </span>
 
-    <input
-      type="checkbox"
-      checked={settings.includeSelectedItemsInCopy}
-      onChange={(e) =>
-        onUpdateSettings({
-          includeSelectedItemsInCopy: e.target.checked,
-        })
-      }
-    />
+    <label className="switch">
+  <input
+    type="checkbox"
+    checked={settings.includeSelectedItemsInCopy}
+    onChange={(e) =>
+      onUpdateSettings({
+        includeSelectedItemsInCopy:
+          e.target.checked,
+      })
+    }
+  />
+
+  <span className="slider"></span>
+</label>
+
   </label>
 
   <p className="description">
