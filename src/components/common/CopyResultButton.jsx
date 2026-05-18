@@ -2,7 +2,11 @@ import { useState } from "react";
 
 const COPY_HISTORY_KEY = "rehab-score-copy-history";
 
-export default function CopyResultButton({ title, text }) {
+export default function CopyResultButton({
+  title,
+  text,
+  historyLimit = 50,
+}) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
@@ -19,10 +23,11 @@ export default function CopyResultButton({ title, text }) {
     };
 
     localStorage.setItem(
-      COPY_HISTORY_KEY,
-      JSON.stringify(
-  [newItem, ...history].slice(0, 100))
-    );
+  COPY_HISTORY_KEY,
+  JSON.stringify(
+    [newItem, ...history].slice(0, historyLimit)
+  )
+);
 
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);

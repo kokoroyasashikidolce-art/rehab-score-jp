@@ -38,6 +38,36 @@ export default function App() {
   const [currentMenu, setCurrentMenu] = useState("home");
   const [selectedScaleId, setSelectedScaleId] = useState(null);
   const [previousMenu, setPreviousMenu] = useState("scale-list");
+
+  const SETTINGS_KEY = "rehab-score-settings";
+
+const [settings, setSettings] = useState(() => {
+  const saved = localStorage.getItem(SETTINGS_KEY);
+
+  return saved
+    ? JSON.parse(saved)
+    : {
+        copyHistoryLimit: 50,
+        recentHistoryLimit: 50,
+      };
+});
+
+const updateSettings = (newSettings) => {
+  setSettings((prev) => {
+    const next = {
+      ...prev,
+      ...newSettings,
+    };
+
+    localStorage.setItem(
+      SETTINGS_KEY,
+      JSON.stringify(next)
+    );
+
+    return next;
+  });
+};
+  
   const scrollPositionsRef = useRef({});
   const [pendingScrollY, setPendingScrollY] = useState(null);
   const saveCurrentScroll = (menuName) => {
@@ -71,7 +101,7 @@ const addRecentScale = (scaleId) => {
     const next = [
       scaleId,
       ...prev.filter((id) => id !== scaleId),
-    ].slice(0, 50);
+    ].slice(0, settings.recentHistoryLimit ?? 50);
 
     localStorage.setItem(RECENT_KEY, JSON.stringify(next));
     return next;
@@ -491,6 +521,8 @@ return (
       onClearRecentHistory={clearRecentHistory}
       onClearFavorites={clearFavorites}
       onClearSavedInputs={clearSavedInputs}
+      settings={settings}
+      onUpdateSettings={updateSettings}
     />
   </>
 )}
@@ -557,9 +589,13 @@ return (
         totalScore={totalScore}
         selectedCount={selectedCount}
         totalItemCount={totalItemCount}
+        copyHistoryLimit={settings.copyHistoryLimit}
       />
     ) : (
-      <ScoreCalculator scale={selectedScale} />
+     <ScoreCalculator
+  scale={selectedScale}
+  copyHistoryLimit={settings.copyHistoryLimit}
+/>
     ),
 },
 

@@ -3,7 +3,11 @@ import ScoreSelectItem from "./ScoreSelectItem";
 import CopyResultButton from "./CopyResultButton";
 import FimLocomotionItem from "../special/FimLocomotionItem";
 
-export default function ScoreCalculator({ scale }) {
+export default function ScoreCalculator({
+  scale,
+  copyHistoryLimit = 50,
+}) {
+  
   const initialScores = {};
   const STORAGE_KEY = `rehab-score-data-${scale.id}`;
 
@@ -279,6 +283,7 @@ return (
       <CopyResultButton
         title={scale.shortTitle || scale.title}
         text={copyText}
+        historyLimit={settings.copyHistoryLimit}
       />
     </>
   );

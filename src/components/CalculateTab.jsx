@@ -30,6 +30,7 @@ export default function CalculateTab({
   totalScore,
   selectedCount,
   totalItemCount,
+  copyHistoryLimit = 50,
 }) {
   const simpleDomains = scale?.domains ?? [];
 
@@ -222,6 +223,7 @@ ${[...selectedBranchItems, ...selectedSimpleItems].join("\n")}`;
       <CopyResultButton
   title="SCIM-SR"
   text={copyText}
+  historyLimit={copyHistoryLimit}
 />
 
     </>
