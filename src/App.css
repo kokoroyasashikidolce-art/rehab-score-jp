@@ -684,7 +684,8 @@ button {
   line-height: 1.8;
 }
 
-.font-large .item .description {
+.font-large .item .description,
+.font-large .branch-item .description {
   font-size: 0.95rem !important;
   line-height: 1.5;
 }
