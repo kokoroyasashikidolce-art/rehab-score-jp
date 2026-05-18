@@ -13,6 +13,51 @@ export default function SettingsPage({
   return (
   <>
 <section className="card">
+  <h2>表示設定</h2>
+
+  <div className="setting-row">
+    <span>
+      <strong>文字サイズ</strong>
+      <small>
+        本文、説明文、選択肢を拡大します。
+      </small>
+    </span>
+
+    <div className="segmented-control">
+      <button
+        className={
+          settings.fontSizeMode === "normal"
+            ? "segment active"
+            : "segment"
+        }
+        onClick={() =>
+          onUpdateSettings({
+            fontSizeMode: "normal",
+          })
+        }
+      >
+        標準
+      </button>
+
+      <button
+        className={
+          settings.fontSizeMode === "large"
+            ? "segment active"
+            : "segment"
+        }
+        onClick={() =>
+          onUpdateSettings({
+            fontSizeMode: "large",
+          })
+        }
+      >
+        大きめ
+      </button>
+    </div>
+  </div>
+</section>
+
+<section className="card">
   <h2>起動時設定</h2>
 
   <label className="setting-row">
@@ -110,12 +155,11 @@ export default function SettingsPage({
 </section>
 
 <section className="card">
-  <h2>履歴設定</h2>
+  <h2>保存件数</h2>
 
   <label className="setting-row">
     <span>
-      <strong>閲覧履歴の保存件数</strong>
-      <small>最近開いた評価スコアの履歴です。</small>
+      <strong>最近開いた評価スコア履歴の保存件数</strong>
     </span>
 
     <select
@@ -134,8 +178,7 @@ export default function SettingsPage({
 
   <label className="setting-row">
     <span>
-      <strong>コピー履歴の保存件数</strong>
-      <small>結果コピーの履歴です。</small>
+      <strong>結果コピー履歴の保存件数</strong>
     </span>
 
     <select

@@ -640,3 +640,22 @@ button {
   color: #991b1b;
   font-weight: 700;
 }
+.font-large .item label {
+  font-size: 1.1rem;
+}
+
+.font-large .description {
+  font-size: 1rem;
+}
+
+.font-large select {
+  font-size: 1rem;
+}
+
+.font-large .copy-preview {
+  font-size: 1rem;
+}
+
+.font-large .card p {
+  font-size: 1rem;
+}

@@ -51,6 +51,7 @@ const [settings, setSettings] = useState(() => {
         recentHistoryLimit: 50,
         startupMode: "home",
         includeSelectedItemsInCopy: true,
+        fontSizeMode: "normal",
       };
 });
 
@@ -406,7 +407,13 @@ if (loading) {
 
 return (
   <>
-    <main className="container">
+    <main
+  className={`container ${
+    settings.fontSizeMode === "large"
+      ? "font-large"
+      : ""
+  }`}
+>
       <h1>
         リハすこ
         <br />
