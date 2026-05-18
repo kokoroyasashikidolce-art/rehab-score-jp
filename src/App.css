@@ -662,3 +662,16 @@ button {
 .segment-large {
   font-size: 1.15rem;
 }
+.font-large .overview-content {
+  font-size: 1rem;
+}
+
+.font-large .tips-content {
+  font-size: 1rem;
+}
+
+.font-large .overview-content,
+.font-large .tips-content {
+  font-size: 1rem;
+  line-height: 1.7;
+}
