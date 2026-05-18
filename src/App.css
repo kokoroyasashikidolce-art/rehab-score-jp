@@ -672,6 +672,14 @@ button {
 
 .font-large .overview-content,
 .font-large .tips-content {
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.font-large .overview-content,
+.font-large .tips-content,
+.font-large .card p,
+.font-large .card li {
+  font-size: 1.15rem;
+  line-height: 1.8;
 }
