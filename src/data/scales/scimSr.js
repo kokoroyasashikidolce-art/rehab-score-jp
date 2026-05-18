@@ -2,7 +2,7 @@ import { simpleDomains } from "../scimData";
 
 export const scimSrScale = {
   id: "scim-sr",
-  title: "SCIM-SR",
+  title: "Spinal Cord Independence Measure – self report",
   shortTitle: "SCIM-SR",
   headerTitle:
   "SCIM-SR (Spinal Cord Independence Measure – self report) : 自己報告形式の脊髄障害自立度評価法",
