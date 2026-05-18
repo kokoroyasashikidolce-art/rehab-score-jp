@@ -625,3 +625,18 @@ button {
   color: #991b1b;
   font-weight: 700;
 }
+.danger-text {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+.danger-toggle-button {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 12px;
+  border-radius: 14px;
+  border: 1px solid #fca5a5;
+  background: #fff5f5;
+  color: #991b1b;
+  font-weight: 700;
+}

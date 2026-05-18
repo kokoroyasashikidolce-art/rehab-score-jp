@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export default function SettingsPage({
   settings,
   onUpdateSettings,
@@ -6,6 +8,8 @@ export default function SettingsPage({
   onClearFavorites,
   onClearSavedInputs,
 }) {
+  const [showDeleteButtons, setShowDeleteButtons] = useState(false);
+
   return (
   <>
 <section className="card">
@@ -150,50 +154,58 @@ export default function SettingsPage({
 </section>
 
 <section className="card">
-        <h2>データ管理</h2>
+  <h2>データ削除</h2>
 
-        <p className="description">
-          この端末に保存されている履歴や入力内容を削除できます。
-        </p>
+  <p className="description">
+    この端末に保存されている履歴や入力内容を削除できます。
+  </p>
 
-        <div className="settings-list">
-          <button
-            className="danger-button"
-            onClick={onClearCopyHistory}
-          >
-            コピー履歴を削除
-          </button>
+  <p className="description danger-text">
+    削除したデータは元に戻せません。
+    必要な結果は事前にコピーして保存してください。
+  </p>
 
-          <button
-            className="danger-button"
-            onClick={onClearRecentHistory}
-          >
-            閲覧履歴を削除
-          </button>
+  {!showDeleteButtons && (
+    <button
+      className="danger-toggle-button"
+      onClick={() => setShowDeleteButtons(true)}
+    >
+      削除ボタンを表示する
+    </button>
+  )}
 
-          <button
-            className="danger-button"
-            onClick={onClearFavorites}
-          >
-            お気に入りを削除
-          </button>
+  {showDeleteButtons && (
+    <div className="settings-list">
+      <button
+        className="danger-button"
+        onClick={onClearCopyHistory}
+      >
+        コピー履歴を削除
+      </button>
 
-          <button
-            className="danger-button"
-            onClick={onClearSavedInputs}
-          >
-            保存済み入力を削除
-          </button>
-        </div>
-      </section>
+      <button
+        className="danger-button"
+        onClick={onClearRecentHistory}
+      >
+        閲覧履歴を削除
+      </button>
 
-      <section className="card">
-        <h2>補足</h2>
+      <button
+        className="danger-button"
+        onClick={onClearFavorites}
+      >
+        お気に入りを削除
+      </button>
 
-        <p className="description">
-          削除したデータは元に戻せません。必要な結果は事前にコピーして保存してください。
-        </p>
-      </section>
+      <button
+        className="danger-button"
+        onClick={onClearSavedInputs}
+      >
+        保存済み入力を削除
+      </button>
+    </div>
+  )}
+</section>
     </>
   );
 }
