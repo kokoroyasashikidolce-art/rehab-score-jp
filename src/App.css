@@ -646,7 +646,6 @@ button {
 
 .font-large .description {
   font-size: 082rem;
-  line-height: 1.5;
 }
 
 .font-large select {
@@ -683,4 +682,13 @@ button {
 .font-large .card li {
   font-size: 1.15rem;
   line-height: 1.8;
+}
+
+.font-large .item .description {
+  font-size: 0.85rem !important;
+  line-height: 1.5;
+}
+
+.font-large .item label {
+  font-size: 1.05rem;
 }
