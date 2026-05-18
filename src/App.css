@@ -685,10 +685,10 @@ button {
 }
 
 .font-large .item .description {
-  font-size: 0.85rem !important;
+  font-size: 0.95rem !important;
   line-height: 1.5;
 }
 
 .font-large .item label {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
 }
