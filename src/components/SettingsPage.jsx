@@ -17,17 +17,42 @@ export default function SettingsPage({
       <small>アプリ起動時に最初に開く画面です。</small>
     </span>
 
-    <select
-      value={settings.startupMode}
-      onChange={(e) =>
-        onUpdateSettings({
-          startupMode: e.target.value,
-        })
-      }
-    >
-      <option value="home">ホーム</option>
-      <option value="lastScale">前回開いていた評価スコア</option>
-    </select>
+
+    <div className="segmented-control">
+
+  <button
+    className={
+      settings.startupMode === "home"
+        ? "segment active"
+        : "segment"
+    }
+    onClick={() =>
+      onUpdateSettings({
+        startupMode: "home",
+      })
+    }
+  >
+    ホーム
+  </button>
+
+  <button
+    className={
+      settings.startupMode === "lastScale"
+        ? "segment active"
+        : "segment"
+    }
+    onClick={() =>
+      onUpdateSettings({
+        startupMode: "lastScale",
+      })
+    }
+  >
+    前回評価
+  </button>
+
+</div>
+
+
   </label>
 </section>
 

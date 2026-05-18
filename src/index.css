@@ -159,3 +159,33 @@ code {
 .switch input:checked + .slider::before {
   transform: translateX(24px);
 }
+
+.segmented-control {
+  display: flex;
+
+  gap: 8px;
+
+  margin-top: 8px;
+}
+
+.segment {
+  flex: 1;
+
+  padding: 10px;
+
+  border-radius: 999px;
+
+  border: 1px solid #ccc;
+
+  background: white;
+
+  cursor: pointer;
+}
+
+.segment.active {
+  background: #4caf50;
+
+  color: white;
+
+  border-color: #4caf50;
+}
