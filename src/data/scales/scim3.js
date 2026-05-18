@@ -26,8 +26,10 @@ export const scim3Scale = {
       items: [
         {
           id: "eating",
-          title:
-            "食事（切る，容器を開ける，飲み物を注ぐ，食べ物を口に運ぶ，飲み物の入ったコップを持つ）",
+          title: "食事",
+
+description:
+"切る，容器を開ける，飲み物を注ぐ，食べ物を口に運ぶ，飲み物の入ったコップを持つ",
           type: "select",
           options: [
             {
@@ -92,7 +94,9 @@ export const scim3Scale = {
         },
         {
           id: "dressing_upper_body",
-          title: "更衣（上半身）常用している装具も含む",
+          title: "更衣（上半身）",
+description:
+"常用している装具も含む",
           type: "select",
           options: [
             { score: 0, label: "全介助を要する．" },
@@ -120,7 +124,9 @@ export const scim3Scale = {
         },
         {
           id: "dressing_lower_body",
-          title: "更衣（下半身）靴，常用している装具も含む",
+          title: "更衣（下半身）",
+description:
+"靴，常用している装具も含む",
           type: "select",
           options: [
             { score: 0, label: "全介助を要する．" },
@@ -148,7 +154,10 @@ export const scim3Scale = {
         },
         {
           id: "grooming",
-          title: "整容（手洗い，洗顔，歯磨き，整髪，髭剃り，化粧）",
+          title: "整容",
+
+description:
+"手洗い，洗顔，歯磨き，整髪，髭剃り，化粧",
           type: "select",
           options: [
             { score: 0, label: "全介助を要する．" },
@@ -274,8 +283,10 @@ export const scim3Scale = {
         },
         {
           id: "toilet_use",
-          title:
-            "トイレの使用（会陰部の清潔，使用前後での衣服の扱い，ナプキンまたはオムツの使用）",
+          title: "トイレの使用",
+
+description:
+"会陰部の清潔，使用前後での衣服の扱い，ナプキンまたはオムツの使用",
           type: "select",
           options: [
             { score: 0, label: "全介助を要する．" },
@@ -334,8 +345,9 @@ export const scim3Scale = {
         },
         {
           id: "transfer_bed_wheelchair",
-          title:
-            "移乗：ベッドー車椅子（車椅子のブレーキ操作，フットレストの跳ね上げ，アームレストの脱着，乗り移り，足の持ち上げ）",
+          title: "移乗：ベッドー車椅子",
+  description:
+    "車椅子のブレーキ操作，フットレストの跳ね上げ，アームレストの脱着，乗り移り，足の持ち上げ",
           type: "select",
           options: [
             { score: 0, label: "全介助を要する．" },
@@ -352,8 +364,10 @@ export const scim3Scale = {
         },
         {
           id: "transfer_wheelchair_toilet_bath",
-          title:
-            "移乗：車椅子ートイレ，浴槽（トイレ用椅子を用いている場合は，それへの/からの乗り移り，通常の車椅子を使用している場合は車椅子のブレーキ操作，フットレストの跳ね上げ，アームレストの脱着，乗り移り，足の持ち上げ）",
+          title: "移乗：車椅子ートイレ，浴槽",
+
+description:
+"トイレ用椅子を用いている場合は，それへの/からの乗り移り．通常の車椅子を使用している場合は車椅子のブレーキ操作，フットレストの跳ね上げ，アームレストの脱着，乗り移り，足の持ち上げ",
           type: "select",
           options: [
             { score: 0, label: "全介助を要する．" },
@@ -492,8 +506,10 @@ export const scim3Scale = {
         },
         {
           id: "transfer_wheelchair_car",
-          title:
-            "移乗：車椅子ー車（に近づく，車椅子のブレーキ操作，アームレストおよびフットレストの取り外し，車への/からの乗り移り，車椅子の積み下ろし）",
+          title: "移乗：車椅子ー車",
+
+description:
+"車への接近，車椅子ブレーキ操作，アームレスト・フットレスト取り外し，車への/からの乗り移り，車椅子の積み下ろし",
           type: "select",
           options: [
             { score: 0, label: "全介助を要する．" },
