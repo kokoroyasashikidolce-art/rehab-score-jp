@@ -6,7 +6,8 @@ export default function SettingsPage({
   onClearFavorites,
   onClearSavedInputs,
 }) {
-
+  return (
+  <>
 <section className="card">
   <h2>履歴設定</h2>
 
@@ -51,9 +52,7 @@ export default function SettingsPage({
   </label>
 </section>
 
-  return (
-    <>
-      <section className="card">
+<section className="card">
         <h2>データ管理</h2>
 
         <p className="description">
