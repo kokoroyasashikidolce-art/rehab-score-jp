@@ -645,7 +645,8 @@ button {
 }
 
 .font-large .description {
-  font-size: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 .font-large select {
