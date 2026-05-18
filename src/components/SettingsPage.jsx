@@ -47,7 +47,7 @@ export default function SettingsPage({
       })
     }
   >
-    前回評価
+    前回評価スコア
   </button>
 
 </div>
@@ -59,7 +59,7 @@ export default function SettingsPage({
 <section className="card">
   <h2>コピー設定</h2>
 
-  <label className="setting-row">
+  <div className="setting-row">
     <span>
       <strong>選択項目をコピーに含める</strong>
       <small>
@@ -67,22 +67,38 @@ export default function SettingsPage({
       </small>
     </span>
 
-    <label className="switch">
-  <input
-    type="checkbox"
-    checked={settings.includeSelectedItemsInCopy}
-    onChange={(e) =>
-      onUpdateSettings({
-        includeSelectedItemsInCopy:
-          e.target.checked,
-      })
-    }
-  />
+    <div className="segmented-control">
+      <button
+        className={
+          settings.includeSelectedItemsInCopy
+            ? "segment active"
+            : "segment"
+        }
+        onClick={() =>
+          onUpdateSettings({
+            includeSelectedItemsInCopy: true,
+          })
+        }
+      >
+        含む
+      </button>
 
-  <span className="slider"></span>
-</label>
-
-  </label>
+      <button
+        className={
+          !settings.includeSelectedItemsInCopy
+            ? "segment active"
+            : "segment"
+        }
+        onClick={() =>
+          onUpdateSettings({
+            includeSelectedItemsInCopy: false,
+          })
+        }
+      >
+        含まない
+      </button>
+    </div>
+  </div>
 
   <p className="description">
     MASなど合計点を出さない評価では、この設定に関係なく選択項目をコピーします。
