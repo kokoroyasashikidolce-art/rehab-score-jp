@@ -175,6 +175,16 @@ export default function SettingsPage({
   )}
 
   {showDeleteButtons && (
+  <>
+    <button
+      className="danger-toggle-button"
+      onClick={() =>
+        setShowDeleteButtons(false)
+      }
+    >
+      削除ボタンを隠す
+    </button>
+
     <div className="settings-list">
       <button
         className="danger-button"
@@ -203,8 +213,9 @@ export default function SettingsPage({
       >
         保存済み入力を削除
       </button>
-    </div>
-  )}
+     </div>
+  </>
+)}
 </section>
     </>
   );
