@@ -692,3 +692,18 @@ button {
 .font-large .item label {
   font-size: 1.15rem;
 }
+
+.font-large .setting-row strong {
+  font-size: 1.1rem;
+}
+
+.font-large .setting-row small {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.font-large .settings-list button,
+.font-large .danger-toggle-button,
+.font-large .danger-button {
+  font-size: 1rem;
+}

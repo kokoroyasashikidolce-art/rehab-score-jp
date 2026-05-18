@@ -9,8 +9,8 @@ export default function BladderItem({ value, onChange }) {
     <div className="branch-item">
       <h3>6. 排尿管理</h3>
      <p className="description">
-      膀胱を空にする方法について考えてください
-     </p>
+  膀胱を空にする方法について考えてください
+</p>
       <label>6A. 留置カテーテルの使用</label>
       <SelectBox
         value={value.catheter}
