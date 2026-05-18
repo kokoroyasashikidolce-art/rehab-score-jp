@@ -31,6 +31,7 @@ export default function CalculateTab({
   selectedCount,
   totalItemCount,
   copyHistoryLimit = 50,
+  includeSelectedItemsInCopy = true,
 }) {
   const simpleDomains = scale?.domains ?? [];
 
@@ -65,13 +66,19 @@ const selectedBranchItems = [
   outdoorScore !== null ? `14. 100m以上の屋外の移動：${outdoorScore}点` : null,
 ].filter(Boolean);
 
+const selectedItemsText = [...selectedBranchItems, ...selectedSimpleItems].join("\n");
+
 const copyText = `SCIM-SR：${totalScore}/100点
 セルフケア：${selfCareTotal}/20
 呼吸と排泄管理：${respirationTotal}/40
-移動：${mobilityTotal}/40
+移動：${mobilityTotal}/40${
+  includeSelectedItemsInCopy
+    ? `
 
 【選択項目】
-${[...selectedBranchItems, ...selectedSimpleItems].join("\n")}`;
+${selectedItemsText}`
+    : ""
+}`;
 
   return (
 

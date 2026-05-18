@@ -31,6 +31,32 @@ export default function SettingsPage({
   </label>
 </section>
 
+<section className="card">
+  <h2>コピー設定</h2>
+
+  <label className="setting-row">
+    <span>
+      <strong>選択項目をコピーに含める</strong>
+      <small>
+        合計点を出す評価スコアで、各項目の選択内容もコピーします。
+      </small>
+    </span>
+
+    <input
+      type="checkbox"
+      checked={settings.includeSelectedItemsInCopy}
+      onChange={(e) =>
+        onUpdateSettings({
+          includeSelectedItemsInCopy: e.target.checked,
+        })
+      }
+    />
+  </label>
+
+  <p className="description">
+    MASなど合計点を出さない評価では、この設定に関係なく選択項目をコピーします。
+  </p>
+</section>
 
 <section className="card">
   <h2>履歴設定</h2>

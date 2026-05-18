@@ -6,6 +6,7 @@ import FimLocomotionItem from "../special/FimLocomotionItem";
 export default function ScoreCalculator({
   scale,
   copyHistoryLimit = 50,
+  includeSelectedItemsInCopy = true,
 }) {
 
   const initialScores = {};
@@ -148,15 +149,22 @@ const selectedItemsText = [
 ].join("\n");
 
 
-  const copyText =
-    scale.showTotal === false
-      ? `${scale.shortTitle || scale.title}
+  const shouldIncludeSelectedItems =
+  scale.showTotal === false || includeSelectedItemsInCopy;
+
+const selectedItemsBlock = shouldIncludeSelectedItems
+  ? `
 
 【選択項目】
 ${selectedItemsText || "未選択"}`
-      : `${scale.shortTitle || scale.title}：${totalScore}${
-          scale.totalScore ? `/${scale.totalScore}点` : "点"
-        }
+  : "";
+
+const copyText =
+  scale.showTotal === false
+    ? `${scale.shortTitle || scale.title}${selectedItemsBlock}`
+    : `${scale.shortTitle || scale.title}：${totalScore}${
+        scale.totalScore ? `/${scale.totalScore}点` : "点"
+      }
 
 ${domainTotals
   .map(
@@ -165,10 +173,7 @@ ${domainTotals
         domain.maxScore ? ` / ${domain.maxScore}` : ""
       }${scale.scoreUnit ?? "点"}`
   )
-  .join("\n")}
-
-【選択項目】
-${selectedItemsText || "未選択"}`;
+  .join("\n")}${selectedItemsBlock}`;
 
   return (
     <>

@@ -49,7 +49,8 @@ const [settings, setSettings] = useState(() => {
     : {
         copyHistoryLimit: 50,
         recentHistoryLimit: 50,
-        copyHistoryLimit: 50,
+        startupMode: "home",
+        includeSelectedItemsInCopy: true,
       };
 });
 
@@ -619,11 +620,15 @@ return (
         selectedCount={selectedCount}
         totalItemCount={totalItemCount}
         copyHistoryLimit={settings.copyHistoryLimit}
+        includeSelectedItemsInCopy={ settings.includeSelectedItemsInCopy}
       />
     ) : (
-     <ScoreCalculator
+    <ScoreCalculator
   scale={selectedScale}
   copyHistoryLimit={settings.copyHistoryLimit}
+  includeSelectedItemsInCopy={
+    settings.includeSelectedItemsInCopy
+  }
 />
     ),
 },
