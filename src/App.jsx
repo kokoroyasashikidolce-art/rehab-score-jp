@@ -49,6 +49,7 @@ const [settings, setSettings] = useState(() => {
     : {
         copyHistoryLimit: 50,
         recentHistoryLimit: 50,
+        copyHistoryLimit: 50,
       };
 });
 
@@ -208,6 +209,22 @@ const [mobility, setMobility] = useState(
 
   return () => clearTimeout(timer);
 }, []);
+
+useEffect(() => {
+  if (settings.startupMode !== "lastScale") return;
+  if (!settings.lastScaleId) return;
+
+  const lastScale = scales.find(
+    (scale) => scale.id === settings.lastScaleId
+  );
+
+  if (!lastScale) return;
+
+  setSelectedScaleId(settings.lastScaleId);
+  setCurrentMenu("scale-detail");
+  setPreviousMenu("home");
+}, []);
+
 
 useEffect(() => {
   const data = {
@@ -413,6 +430,9 @@ return (
       onSelectScale={(scaleId) => {
          setSelectedScaleId(scaleId);
          addRecentScale(scaleId);
+         updateSettings({
+  lastScaleId: scaleId,
+});
          setPreviousMenu("scale-list");
          saveCurrentScroll("scale-list");
          setCurrentMenu("scale-detail");
@@ -447,6 +467,9 @@ return (
       onSelectScale={(scaleId) => {
   setSelectedScaleId(scaleId);
   addRecentScale(scaleId);
+  updateSettings({
+  lastScaleId: scaleId,
+});
   setPreviousMenu("favorites");
   saveCurrentScroll("favorites");
   setCurrentMenu("scale-detail");
@@ -468,6 +491,9 @@ return (
       onSelectScale={(scaleId) => {
   setSelectedScaleId(scaleId);
   addRecentScale(scaleId);
+  updateSettings({
+  lastScaleId: scaleId,
+});
   setPreviousMenu("history");
   saveCurrentScroll("history");
   setCurrentMenu("scale-detail");
@@ -489,6 +515,9 @@ return (
       onSelectScale={(scaleId) => {
         setSelectedScaleId(scaleId);
         addRecentScale(scaleId);
+        updateSettings({
+  lastScaleId: scaleId,
+});
         setPreviousMenu("search");
         saveCurrentScroll("search");
         setCurrentMenu("scale-detail");

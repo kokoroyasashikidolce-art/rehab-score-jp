@@ -9,6 +9,30 @@ export default function SettingsPage({
   return (
   <>
 <section className="card">
+  <h2>起動時設定</h2>
+
+  <label className="setting-row">
+    <span>
+      <strong>起動時の画面</strong>
+      <small>アプリ起動時に最初に開く画面です。</small>
+    </span>
+
+    <select
+      value={settings.startupMode}
+      onChange={(e) =>
+        onUpdateSettings({
+          startupMode: e.target.value,
+        })
+      }
+    >
+      <option value="home">ホーム</option>
+      <option value="lastScale">前回開いていた評価スコア</option>
+    </select>
+  </label>
+</section>
+
+
+<section className="card">
   <h2>履歴設定</h2>
 
   <label className="setting-row">
