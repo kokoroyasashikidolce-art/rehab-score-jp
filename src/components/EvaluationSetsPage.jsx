@@ -6,7 +6,7 @@ export default function EvaluationSetsPage({
   onSelectScale,
 }) {
   const [selectedTags, setSelectedTags] = useState([]);
-
+  const [showTagFilter, setShowTagFilter] = useState(false);
   const findScale = (scaleId) =>
     scales.find((scale) => scale.id === scaleId);
 
@@ -41,6 +41,27 @@ export default function EvaluationSetsPage({
         疾患や場面ごとによく使う評価スコアをまとめています。
       </p>
 
+      <div className="tag-filter-area">
+  {!showTagFilter && (
+    <button
+      className="tag-filter-toggle"
+      onClick={() => setShowTagFilter(true)}
+    >
+      タグでフィルタ
+      {selectedTags.length > 0 && `（${selectedTags.length}件選択中）`}
+    </button>
+  )}
+
+  {showTagFilter && (
+    <>
+      <button
+        className="tag-filter-toggle"
+        onClick={() => setShowTagFilter(false)}
+      >
+        タグフィルタを隠す
+        {selectedTags.length > 0 && `（${selectedTags.length}件選択中）`}
+      </button>
+
       <div className="tag-filter">
         <button
           className={
@@ -67,6 +88,9 @@ export default function EvaluationSetsPage({
           </button>
         ))}
       </div>
+    </>
+  )}
+</div>
 
       <div className="set-list">
         {filteredSets.map((set) => (
