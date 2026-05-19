@@ -3,7 +3,7 @@ import { categories } from "../data/categories";
 
 export default function ScaleList({ scales, onSelectScale }) {
   const [selectedTags, setSelectedTags] = useState([]);
-
+  const [showTagFilter, setShowTagFilter] = useState(false);
   const allTags = Array.from(
     new Set(scales.flatMap((scale) => scale.tags ?? []))
   );
@@ -27,37 +27,55 @@ export default function ScaleList({ scales, onSelectScale }) {
 
   return (
     <section className="card">
-      <div className="tag-filter">
-
-  <button
-    className={
-      selectedTags.length === 0
-        ? "tag-filter-button active"
-        : "tag-filter-button"
-    }
-    onClick={() =>
-      setSelectedTags([])
-    }
-  >
-    すべて
-  </button>
-
-  {allTags.map((tag) => (
+     <div className="tag-filter-area">
+  {!showTagFilter && (
     <button
-      key={tag}
-      className={
-        selectedTags.includes(tag)
-          ? "tag-filter-button active"
-          : "tag-filter-button"
-      }
-      onClick={() =>
-        toggleTag(tag)
-      }
+      className="tag-filter-toggle"
+      onClick={() => setShowTagFilter(true)}
     >
-      {tag}
+      タグでフィルタ
+      {selectedTags.length > 0 && `（${selectedTags.length}件選択中）`}
     </button>
-  ))}
+  )}
 
+  {showTagFilter && (
+    <>
+      <button
+        className="tag-filter-toggle"
+        onClick={() => setShowTagFilter(false)}
+      >
+        タグフィルタを隠す
+        {selectedTags.length > 0 && `（${selectedTags.length}件選択中）`}
+      </button>
+
+      <div className="tag-filter">
+        <button
+          className={
+            selectedTags.length === 0
+              ? "tag-filter-button active"
+              : "tag-filter-button"
+          }
+          onClick={() => setSelectedTags([])}
+        >
+          すべて
+        </button>
+
+        {allTags.map((tag) => (
+          <button
+            key={tag}
+            className={
+              selectedTags.includes(tag)
+                ? "tag-filter-button active"
+                : "tag-filter-button"
+            }
+            onClick={() => toggleTag(tag)}
+          >
+            {tag}
+          </button>
+        ))}
+      </div>
+    </>
+  )}
 </div>
 
       {categories.map((category) => {

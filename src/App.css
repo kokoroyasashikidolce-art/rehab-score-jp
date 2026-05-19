@@ -25,9 +25,8 @@
 .description {
   font-size: 14px;
   color: #555;
-  margin-top: 4px;
-  margin-bottom: 8px;
-  line-height: 1.5;
+  line-height: 1.7;
+  margin: 6px 0 10px;
 }
 
 /* スマホ・タブレット向けUI改善 */
@@ -72,12 +71,6 @@ button {
   font-size: 16px;
   padding: 10px 16px;
   border-radius: 12px;
-}
-
-.description {
-  font-size: 14px;
-  line-height: 1.7;
-  margin: 6px 0 10px;
 }
 
 /* iPhone/Androidの狭い画面 */
@@ -408,24 +401,11 @@ button {
   height: 40px;
   min-height: 40px;
   padding: 0;
-
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   background: #ffffff;
-
   font-size: 22px;
   font-weight: 700;
-  .back-button,
-.favorite-button {
-  color: var(--header-icon-color);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: transparent;
-  border: none;
-}
 }
 
 .scale-header-title {
@@ -729,11 +709,26 @@ button {
 .font-large .tag-chip {
   font-size: 14px;
 }
+
+.tag-filter-area {
+  margin-bottom: 18px;
+}
+
+.tag-filter-toggle {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #111827;
+  font-weight: 700;
+}
+
 .tag-filter {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 18px;
+  margin-top: 12px;
 }
 
 .tag-filter-button {
