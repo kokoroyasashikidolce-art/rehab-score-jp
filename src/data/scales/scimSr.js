@@ -5,13 +5,23 @@ export const scimSrScale = {
   title: "Spinal Cord Independence Measure – self report",
   shortTitle: "SCIM-SR",
   headerTitle:
-  "SCIM-SR (Spinal Cord Independence Measure – self report) : 自己報告形式の脊髄障害自立度評価法",
+    "SCIM-SR (Spinal Cord Independence Measure – self report) : 自己報告形式の脊髄障害自立度評価法",
+
   totalScore: 100,
   showTotal: true,
 
+  category: "spinal-cord-injury",
+
   categories: ["spinal-cord-injury"],
-  tags: ["脊髄損傷", "ADL", "外来", "自己記入",],
-  
+
+  tags: [
+    "脊髄損傷",
+    "ADL",
+    "外来",
+    "自己記入",
+    "100点満点",
+  ],
+
   tabs: {
     overview:
       "SCIM-SRは、脊髄障害のある方の日常生活における自立度を自己報告形式で評価する尺度です。",
