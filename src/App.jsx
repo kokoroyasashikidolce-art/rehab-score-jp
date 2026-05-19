@@ -642,13 +642,53 @@ return (
 
 
 
-           {
+{
   label: "概要",
-  content: <OverviewTab scale={selectedScale} />,
+  content: (
+    <section className="card">
+      <h2>概要</h2>
+
+      <p className="overview-content">
+        {selectedScale.tabs?.overview ?? "概要は未登録です。"}
+      </p>
+
+      {selectedScale.tags?.length > 0 && (
+        <div className="tag-list">
+          <strong>タグ：</strong>
+
+          {selectedScale.tags.map((tag) => (
+            <span key={tag} className="tag-chip">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+    </section>
+  ),
 },
 {
   label: "豆知識",
-  content: <TipsTab scale={selectedScale} />,
+  content: (
+    <section className="card">
+      <h2>豆知識</h2>
+
+      <p className="tips-content">
+        {selectedScale.tabs?.tips ?? "豆知識は未登録です。"}
+      </p>
+
+      {selectedScale.tags?.length > 0 && (
+        <div className="tag-list">
+          <strong>タグ：</strong>
+
+          {selectedScale.tags.map((tag) => (
+            <span key={tag} className="tag-chip">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+    </section>
+  ),
 },
               
             ]}
