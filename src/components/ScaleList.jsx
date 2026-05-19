@@ -4,9 +4,12 @@ export default function ScaleList({ scales, onSelectScale }) {
   return (
     <section className="card">
       {categories.map((category) => {
-        const categoryScales = scales.filter(
-          (scale) => scale.category === category.id
-        );
+        const categoryScales = scales.filter((scale) => {
+          const scaleCategories =
+            scale.categories ?? [scale.category];
+
+          return scaleCategories.includes(category.id);
+        });
 
         if (categoryScales.length === 0) return null;
 
@@ -16,7 +19,9 @@ export default function ScaleList({ scales, onSelectScale }) {
               <span>{category.icon}</span> {category.title}
             </h3>
 
-            <p className="description">{category.description}</p>
+            <p className="description">
+              {category.description}
+            </p>
 
             <div className="scale-list">
               {categoryScales.map((scale) => (
@@ -25,7 +30,9 @@ export default function ScaleList({ scales, onSelectScale }) {
                   className="scale-card"
                   onClick={() => onSelectScale(scale.id)}
                 >
-                  <strong>{scale.shortTitle || scale.title}</strong>
+                  <strong>
+                    {scale.shortTitle || scale.title}
+                  </strong>
                   <span>{scale.title}</span>
                 </button>
               ))}
