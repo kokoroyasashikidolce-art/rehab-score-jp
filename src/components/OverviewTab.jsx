@@ -4,7 +4,7 @@ export default function OverviewTab({ scale }) {
       <h2>概要</h2>
 
       <p className="overview-content">
-        {scale.tabs?.overview}
+        {scale.tabs?.overview ?? "概要は未登録です。"}
       </p>
 
       {scale.tags?.length > 0 && (
@@ -12,10 +12,7 @@ export default function OverviewTab({ scale }) {
           <strong>タグ：</strong>
 
           {scale.tags.map((tag) => (
-            <span
-              key={tag}
-              className="tag-chip"
-            >
+            <span key={tag} className="tag-chip">
               {tag}
             </span>
           ))}
