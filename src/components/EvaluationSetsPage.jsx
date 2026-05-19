@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { evaluationSets } from "../data/sets/evaluationSets";
+import { userEvaluationSets }
+from "../data/sets/userEvaluationSets";
 
 export default function EvaluationSetsPage({
   scales,
@@ -36,10 +38,15 @@ export default function EvaluationSetsPage({
   return (
     <section className="card">
       <h2>評価セット</h2>
-
+      <div className="set-actions">
+  <button className="create-set-button">
+    ＋ 自作評価セットを作成
+  </button>
+</div>
       <p className="description">
         疾患や場面ごとによく使う評価スコアをまとめています。
       </p>
+      
 
       <div className="tag-filter-area">
   {!showTagFilter && (
@@ -91,6 +98,29 @@ export default function EvaluationSetsPage({
     </>
   )}
 </div>
+
+{userEvaluationSets.length > 0 && (
+  <>
+    <h3>自作評価セット</h3>
+
+    <div className="set-list">
+      {userEvaluationSets.map((set) => (
+        <div
+          className="set-card"
+          key={set.id}
+        >
+          <h4>{set.title}</h4>
+
+          <p className="description">
+            {set.description}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <h3>公式評価セット</h3>
+  </>
+)}
 
       <div className="set-list">
         {filteredSets.map((set) => (

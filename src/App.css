@@ -780,3 +780,26 @@ button {
   gap: 10px;
   margin-top: 12px;
 }
+.set-actions {
+  margin: 12px 0 16px;
+}
+
+.create-set-button {
+  width: 100%;
+
+  padding: 12px;
+
+  border-radius: 14px;
+
+  border: 1px solid #d1d5db;
+
+  background: #ffffff;
+
+  font-weight: 700;
+
+  min-height: 48px;
+}
+
+.font-large .create-set-button {
+  font-size: 16px;
+}
