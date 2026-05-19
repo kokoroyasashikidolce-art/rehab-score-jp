@@ -35,14 +35,125 @@ export default function EvaluationSetsPage({
           )
         );
 
+  const USER_SETS_KEY = "rehab-score-user-evaluation-sets";
+
+const [showCreateForm, setShowCreateForm] = useState(false);
+const [userSets, setUserSets] = useState(() => {
+  const saved = localStorage.getItem(USER_SETS_KEY);
+  return saved ? JSON.parse(saved) : [];
+});
+
+const [newSetTitle, setNewSetTitle] = useState("");
+const [newSetDescription, setNewSetDescription] = useState("");
+const [newSetScaleIds, setNewSetScaleIds] = useState([]);
+
+
+const toggleScaleInNewSet = (scaleId) => {
+  setNewSetScaleIds((prev) =>
+    prev.includes(scaleId)
+      ? prev.filter((id) => id !== scaleId)
+      : [...prev, scaleId]
+  );
+};
+
+const saveUserSet = () => {
+  if (!newSetTitle.trim()) {
+    alert("セット名を入力してください。");
+    return;
+  }
+
+  if (newSetScaleIds.length === 0) {
+    alert("評価スコアを1つ以上選択してください。");
+    return;
+  }
+
+  const newSet = {
+    id: `user-${Date.now()}`,
+    title: newSetTitle.trim(),
+    description: newSetDescription.trim(),
+    scales: newSetScaleIds,
+    tags: ["自作"],
+    isUserSet: true,
+  };
+
+  const next = [newSet, ...userSets];
+
+  setUserSets(next);
+  localStorage.setItem(USER_SETS_KEY, JSON.stringify(next));
+
+  setNewSetTitle("");
+  setNewSetDescription("");
+  setNewSetScaleIds([]);
+  setShowCreateForm(false);
+};
+
+
   return (
     <section className="card">
       <h2>評価セット</h2>
       <div className="set-actions">
-  <button className="create-set-button">
-    ＋ 自作評価セットを作成
-  </button>
+  <button
+  className="create-set-button"
+  onClick={() => setShowCreateForm(!showCreateForm)}
+>
+  {showCreateForm
+    ? "作成フォームを閉じる"
+    : "＋ 自作評価セットを作成"}
+</button>
 </div>
+
+{showCreateForm && (
+  <div className="set-form">
+    <label>
+      セット名
+      <input
+        className="search-input"
+        value={newSetTitle}
+        onChange={(e) => setNewSetTitle(e.target.value)}
+        placeholder="例：私の痙縮外来セット"
+      />
+    </label>
+
+    <label>
+      説明
+      <input
+        className="search-input"
+        value={newSetDescription}
+        onChange={(e) => setNewSetDescription(e.target.value)}
+        placeholder="例：外来でよく使う評価"
+      />
+    </label>
+
+    <p className="description">
+      含める評価スコアを選択してください。
+    </p>
+
+    <div className="set-scale-list">
+      {scales.map((scale) => (
+        <button
+          key={scale.id}
+          className={
+            newSetScaleIds.includes(scale.id)
+              ? "scale-card selected"
+              : "scale-card"
+          }
+          onClick={() => toggleScaleInNewSet(scale.id)}
+        >
+          <strong>{scale.shortTitle || scale.title}</strong>
+          <span>{scale.title}</span>
+        </button>
+      ))}
+    </div>
+
+    <button
+      className="create-set-button"
+      onClick={saveUserSet}
+    >
+      保存する
+    </button>
+  </div>
+)}
+
       <p className="description">
         疾患や場面ごとによく使う評価スコアをまとめています。
       </p>

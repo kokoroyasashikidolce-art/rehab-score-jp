@@ -803,3 +803,18 @@ button {
 .font-large .create-set-button {
   font-size: 16px;
 }
+
+.set-form {
+  display: grid;
+  gap: 12px;
+  margin: 12px 0 18px;
+  padding: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: #f9fafb;
+}
+
+.scale-card.selected {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
