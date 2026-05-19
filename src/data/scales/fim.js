@@ -4,7 +4,16 @@ export const fimScale = {
   shortTitle: "FIM",
   headerTitle:
   "FIM (Functional Independence Measure) : 機能的自立度評価法",
-  category: "adl",
+  categories: ["adl"],
+tags: [
+  "ADL",
+  "回復期",
+  "入院",
+  "運動",
+  "認知",
+  "介助量",
+],
+
   totalScore: 126,
   showTotal: true,
   fixedBottomBar: true,

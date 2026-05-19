@@ -31,7 +31,17 @@ export const masScale = {
   shortTitle: "MAS",
   headerTitle:
   "MAS (Modified Ashworth Scale) : 修正アシュワーススケール",
-  category: "stroke",
+  categories: ["spasticity-muscle-tone"],
+tags: [
+  "痙縮",
+  "筋緊張",
+  "上肢",
+  "下肢",
+  "脳卒中",
+  "脊髄損傷",
+  "外来",
+  "入院",
+],
   showTotal: false,
   scoreUnit: "",
 

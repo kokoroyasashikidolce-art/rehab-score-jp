@@ -4,7 +4,16 @@ export const biScale = {
   shortTitle: "BI",
   headerTitle:
   "BI (Barthel Index) : バーセルインデックス",
-  category: "adl",
+  categories: ["adl"],
+tags: [
+  "ADL",
+  "基本的ADL",
+  "入院",
+  "外来",
+  "介助量",
+],
+
+
   totalScore: 100,
   showTotal: true,
   fixedBottomBar: true,

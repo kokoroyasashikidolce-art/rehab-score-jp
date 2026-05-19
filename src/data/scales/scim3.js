@@ -5,8 +5,12 @@ export const scim3Scale = {
   headerTitle:
     "SCIM III (Spinal Cord Independence Measure version III) : 脊髄障害自立度評価法 第3版",
 
-  category: "spinal-cord-injury",
-
+  categories: ["spinal-cord-injury"],
+  tags: [
+    "脊髄損傷",
+    "ADL",
+    "入院",
+    "観察評価",],
   totalScore: 100,
   showTotal: true,
   fixedBottomBar: true,
