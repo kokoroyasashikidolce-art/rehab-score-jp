@@ -9,8 +9,9 @@ export const scimSrScale = {
   totalScore: 100,
   showTotal: true,
 
-  category: "spinal-cord-injury",
-
+  categories: ["spinal-cord-injury"],
+  tags: ["脊髄損傷", "ADL", "外来", "自己記入",],
+  
   tabs: {
     overview:
       "SCIM-SRは、脊髄障害のある方の日常生活における自立度を自己報告形式で評価する尺度です。",

@@ -19,14 +19,16 @@ const searchText = [
   scale.shortTitle,
   scale.headerTitle,
   scale.category,
+  scale.categories?.join(" "),
+  scale.tags?.join(" "),
   category?.title,
   category?.description,
   scale.tabs?.overview,
   scale.tabs?.tips,
 ]
-      .filter(Boolean)
-      .join(" ")
-      .toLowerCase();
+  .filter(Boolean)
+  .join(" ")
+  .toLowerCase();
 
     return searchText.includes(normalizedQuery);
   });
