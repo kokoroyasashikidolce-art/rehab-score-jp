@@ -640,71 +640,64 @@ button {
   color: #991b1b;
   font-weight: 700;
 }
-.font-large .item label {
+/* ===== 文字サイズ：大きめ ===== */
+
+.segment-large {
+  font-size: 1.15rem;
+}
+
+/* 評価項目名 */
+.font-large .item label,
+.font-large .branch-item label {
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+/* 補足説明 */
+.font-large .item .description,
+.font-large .branch-item .description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* 概要・豆知識 */
+.font-large .overview-content,
+.font-large .tips-content {
   font-size: 1.1rem;
+  line-height: 1.8;
 }
 
-.font-large .description {
-  font-size: 082rem;
+/* 通常文章 */
+.font-large .card p,
+.font-large .card li {
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
+/* プルダウン */
 .font-large select {
   font-size: 1rem;
 }
 
+/* コピー結果 */
 .font-large .copy-preview {
   font-size: 1rem;
 }
 
-.font-large .card p {
-  font-size: 1rem;
-}
-.segment-large {
-  font-size: 1.15rem;
-}
-.font-large .overview-content {
-  font-size: 1rem;
-}
-
-.font-large .tips-content {
-  font-size: 1rem;
-}
-
-.font-large .overview-content,
-.font-large .tips-content {
-  font-size: 1.15rem;
-  line-height: 1.8;
-}
-
-.font-large .overview-content,
-.font-large .tips-content,
-.font-large .card p,
-.font-large .card li {
-  font-size: 1.15rem;
-  line-height: 1.8;
-}
-
-.font-large .item .description,
-.font-large .branch-item .description {
-  font-size: 0.95rem !important;
-  line-height: 1.5;
-}
-
-.font-large .item label {
-  font-size: 1.15rem;
-}
-
+/* 設定画面 */
 .font-large .setting-row strong {
   font-size: 1.1rem;
 }
 
 .font-large .setting-row small {
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-.font-large .settings-list button,
+/* 設定ボタン */
+.font-large .segment,
+.font-large .danger-button,
 .font-large .danger-toggle-button,
-.font-large .danger-button {
+.font-large .settings-list button {
   font-size: 1rem;
 }
