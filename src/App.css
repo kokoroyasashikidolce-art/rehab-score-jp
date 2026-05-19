@@ -756,3 +756,27 @@ button {
   font-weight: 700;
   color: #374151;
 }
+
+.set-list {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.set-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 14px;
+  background: #ffffff;
+}
+
+.set-card h3 {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+.set-scale-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}

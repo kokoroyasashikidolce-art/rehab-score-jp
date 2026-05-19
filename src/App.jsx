@@ -27,6 +27,7 @@ import RecentList from "./components/RecentList";
 import SearchPage from "./components/SearchPage";
 import InfoPage from "./components/InfoPage";
 import SettingsPage from "./components/SettingsPage";
+import EvaluationSetsPage from "./components/EvaluationSetsPage";
 
 export default function App() {
   const scimSrScale = scales.find(
@@ -560,6 +561,30 @@ return (
       onClearSavedInputs={clearSavedInputs}
       settings={settings}
       onUpdateSettings={updateSettings}
+    />
+  </>
+)}
+
+{currentMenu === "sets" && (
+  <>
+    <AppHeader
+      title="評価セット"
+      onBack={() => setCurrentMenu("home")}
+    />
+
+    <EvaluationSetsPage
+      scales={scales}
+      onSelectScale={(scaleId) => {
+        setSelectedScaleId(scaleId);
+        addRecentScale(scaleId);
+        updateSettings({
+          lastScaleId: scaleId,
+        });
+        setPreviousMenu("sets");
+        saveCurrentScroll("sets");
+        setCurrentMenu("scale-detail");
+        window.scrollTo(0, 0);
+      }}
     />
   </>
 )}
