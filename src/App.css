@@ -701,3 +701,31 @@ button {
 .font-large .settings-list button {
   font-size: 1rem;
 }
+.tag-list {
+  margin-top: 16px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  align-items: center;
+}
+
+.tag-chip {
+  padding: 6px 10px;
+
+  border-radius: 999px;
+
+  background: #eef2ff;
+
+  color: #1e40af;
+
+  font-size: 13px;
+
+  line-height: 1.2;
+}
+
+.font-large .tag-chip {
+  font-size: 14px;
+}

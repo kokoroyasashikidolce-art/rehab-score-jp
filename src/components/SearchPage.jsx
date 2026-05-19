@@ -41,7 +41,7 @@ const searchText = [
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="評価スコア名・略語・カテゴリで検索"
+          placeholder="評価スコア名、カテゴリ、タグで検索"
           autoFocus
         />
       </section>
