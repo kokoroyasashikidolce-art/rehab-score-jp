@@ -729,3 +729,25 @@ button {
 .font-large .tag-chip {
   font-size: 14px;
 }
+.tag-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.tag-filter-button {
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #374151;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 13px;
+  min-height: 36px;
+}
+
+.tag-filter-button.active {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
