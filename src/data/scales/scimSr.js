@@ -12,7 +12,10 @@ export const scimSrScale = {
 
   category: "spinal-cord-injury",
 
-  categories: ["spinal-cord-injury"],
+categories: [
+  "adl-iadl",
+  "spinal-cord-injury",
+],
 
   tags: [
     "脊髄損傷",

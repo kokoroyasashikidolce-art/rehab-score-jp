@@ -31,7 +31,9 @@ export const masScale = {
   shortTitle: "MAS",
   headerTitle:
   "MAS (Modified Ashworth Scale) : 修正アシュワーススケール",
-  categories: ["spasticity-muscle-tone"],
+categories: [
+  "tone-spasticity",
+],
 tags: [
   "痙縮",
   "筋緊張",

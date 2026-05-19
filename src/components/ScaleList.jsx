@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { categories } from "../data/categories";
+import { categories } from "../data/taxonomy/categories";
+import { tagGroups } from "../data/taxonomy/tagDictionary";
 
 export default function ScaleList({ scales, onSelectScale }) {
   const [selectedTags, setSelectedTags] = useState([]);
@@ -60,7 +61,21 @@ export default function ScaleList({ scales, onSelectScale }) {
           すべて
         </button>
 
-        {allTags.map((tag) => (
+        {tagGroups.map((group) => {
+  const availableTags = group.tags.filter((tag) =>
+    allTags.includes(tag)
+  );
+
+  if (availableTags.length === 0) return null;
+
+  return (
+    <div className="tag-filter-group" key={group.id}>
+      <p className="tag-filter-group-title">
+        {group.title}
+      </p>
+
+      <div className="tag-filter">
+        {availableTags.map((tag) => (
           <button
             key={tag}
             className={
@@ -73,6 +88,12 @@ export default function ScaleList({ scales, onSelectScale }) {
             {tag}
           </button>
         ))}
+      </div>
+    </div>
+  );
+})}
+
+
       </div>
     </>
   )}

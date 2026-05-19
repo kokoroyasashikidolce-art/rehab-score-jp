@@ -4,7 +4,9 @@ export const biScale = {
   shortTitle: "BI",
   headerTitle:
   "BI (Barthel Index) : バーセルインデックス",
-  categories: ["adl"],
+categories: [
+  "adl-iadl",
+],
 tags: [
   "ADL",
   "基本的ADL",

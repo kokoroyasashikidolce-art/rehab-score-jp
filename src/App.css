@@ -746,3 +746,13 @@ button {
   color: #ffffff;
   border-color: #2563eb;
 }
+
+.tag-filter-group {
+  margin-top: 14px;
+}
+
+.tag-filter-group-title {
+  margin: 10px 0 6px;
+  font-weight: 700;
+  color: #374151;
+}

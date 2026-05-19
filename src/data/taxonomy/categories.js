@@ -1,0 +1,130 @@
+export const categories = [
+  {
+    id: "consciousness",
+    title: "意識・覚醒",
+    icon: "👁️",
+    description: "意識レベル、覚醒、せん妄などを評価する尺度",
+  },
+  {
+    id: "motor-function",
+    title: "運動機能",
+    icon: "💪",
+    description: "筋力、麻痺、協調運動、関節可動域などを評価する尺度",
+  },
+  {
+    id: "upper-limb-function",
+    title: "上肢機能",
+    icon: "✋",
+    description: "上肢・手指機能、把持、巧緻動作を評価する尺度",
+  },
+  {
+    id: "mobility-gait",
+    title: "歩行・移動",
+    icon: "🚶",
+    description: "歩行、移動、移乗、車椅子移動などを評価する尺度",
+  },
+  {
+    id: "balance-posture",
+    title: "バランス・姿勢",
+    icon: "🧍",
+    description: "座位・立位バランス、姿勢制御、転倒リスクを評価する尺度",
+  },
+  {
+    id: "tone-spasticity",
+    title: "筋緊張・不随意運動",
+    icon: "🌀",
+    description: "痙縮、筋緊張、固縮、不随意運動などを評価する尺度",
+  },
+  {
+    id: "sensory-pain",
+    title: "感覚・疼痛",
+    icon: "⚡",
+    description: "感覚障害、しびれ、疼痛などを評価する尺度",
+  },
+  {
+    id: "higher-brain",
+    title: "高次脳機能",
+    icon: "🧩",
+    description: "注意、記憶、遂行機能、認知機能、失認・失行などを評価する尺度",
+  },
+  {
+    id: "language-communication",
+    title: "言語・コミュニケーション",
+    icon: "🗣️",
+    description: "失語、構音、発話、コミュニケーション能力を評価する尺度",
+  },
+  {
+    id: "swallowing-nutrition",
+    title: "嚥下・栄養",
+    icon: "🥣",
+    description: "嚥下機能、経口摂取、栄養状態を評価する尺度",
+  },
+  {
+    id: "bladder-bowel",
+    title: "排泄",
+    icon: "🚻",
+    description: "排尿、排便、膀胱・直腸機能を評価する尺度",
+  },
+  {
+    id: "adl-iadl",
+    title: "ADL・IADL",
+    icon: "🏠",
+    description: "日常生活動作、手段的ADL、介助量、自立度を評価する尺度",
+  },
+  {
+    id: "qol-psychology",
+    title: "QOL・心理",
+    icon: "🌿",
+    description: "生活の質、心理、気分、社会参加を評価する尺度",
+  },
+  {
+    id: "cardiopulmonary",
+    title: "心肺・運動耐容能",
+    icon: "🫀",
+    description: "呼吸機能、心肺機能、運動耐容能を評価する尺度",
+  },
+  {
+    id: "development",
+    title: "成長・発達",
+    icon: "🧒",
+    description: "小児の発達、粗大運動、日常生活機能を評価する尺度",
+  },
+
+  // 疾患特異的カテゴリ
+  {
+    id: "stroke",
+    title: "脳卒中",
+    icon: "🧠",
+    description: "脳卒中に特異的、または脳卒中評価で特に用いられる尺度",
+  },
+  {
+    id: "spinal-cord-injury",
+    title: "脊髄損傷",
+    icon: "🦴",
+    description: "脊髄損傷に特異的、または脊髄障害で特に用いられる尺度",
+  },
+  {
+    id: "parkinson",
+    title: "パーキンソン病",
+    icon: "🌱",
+    description: "パーキンソン病やパーキンソニズムに関する尺度",
+  },
+  {
+    id: "neuromuscular",
+    title: "神経筋疾患",
+    icon: "🧬",
+    description: "神経筋疾患、筋疾患、末梢神経障害に関する尺度",
+  },
+  {
+    id: "amputation",
+    title: "切断",
+    icon: "🦿",
+    description: "切断、義肢、断端管理に関する尺度",
+  },
+  {
+    id: "orthopedic",
+    title: "運動器",
+    icon: "🦵",
+    description: "骨関節疾患、整形外科疾患、運動器障害に関する尺度",
+  },
+];
