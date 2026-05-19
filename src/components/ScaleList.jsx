@@ -2,47 +2,63 @@ import { useState } from "react";
 import { categories } from "../data/categories";
 
 export default function ScaleList({ scales, onSelectScale }) {
-  const [selectedTag, setSelectedTag] = useState("all");
+  const [selectedTags, setSelectedTags] = useState([]);
 
   const allTags = Array.from(
     new Set(scales.flatMap((scale) => scale.tags ?? []))
   );
 
+  const toggleTag = (tag) => {
+  setSelectedTags((prev) =>
+    prev.includes(tag)
+      ? prev.filter((t) => t !== tag)
+      : [...prev, tag]
+  );
+};
+
   const filteredScales =
-    selectedTag === "all"
-      ? scales
-      : scales.filter((scale) =>
-          scale.tags?.includes(selectedTag)
-        );
+  selectedTags.length === 0
+    ? scales
+    : scales.filter((scale) =>
+        selectedTags.every((tag) =>
+          scale.tags?.includes(tag)
+        )
+      );
 
   return (
     <section className="card">
       <div className="tag-filter">
-        <button
-          className={
-            selectedTag === "all"
-              ? "tag-filter-button active"
-              : "tag-filter-button"
-          }
-          onClick={() => setSelectedTag("all")}
-        >
-          すべて
-        </button>
 
-        {allTags.map((tag) => (
-          <button
-            key={tag}
-            className={
-              selectedTag === tag
-                ? "tag-filter-button active"
-                : "tag-filter-button"
-            }
-            onClick={() => setSelectedTag(tag)}
-          >
-            {tag}
-          </button>
-        ))}
-      </div>
+  <button
+    className={
+      selectedTags.length === 0
+        ? "tag-filter-button active"
+        : "tag-filter-button"
+    }
+    onClick={() =>
+      setSelectedTags([])
+    }
+  >
+    すべて
+  </button>
+
+  {allTags.map((tag) => (
+    <button
+      key={tag}
+      className={
+        selectedTags.includes(tag)
+          ? "tag-filter-button active"
+          : "tag-filter-button"
+      }
+      onClick={() =>
+        toggleTag(tag)
+      }
+    >
+      {tag}
+    </button>
+  ))}
+
+</div>
 
       {categories.map((category) => {
         const categoryScales = filteredScales.filter((scale) => {
