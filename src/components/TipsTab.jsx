@@ -4,20 +4,29 @@ export default function TipsTab({ scale }) {
       <h2>豆知識</h2>
 
       <p className="tips-content">
-        {scale.tabs?.tips ?? "豆知識は未登録です。"}
+        {scale.tabs?.tips ??
+          "豆知識は未登録です。"}
       </p>
 
-      {scale.tags?.length > 0 && (
-        <div className="tag-list">
-          <strong>タグ：</strong>
+      {scale.tags &&
+        scale.tags.length > 0 && (
+          <>
+            <p>
+              <strong>タグ</strong>
+            </p>
 
-          {scale.tags.map((tag) => (
-            <span key={tag} className="tag-chip">
-              {tag}
-            </span>
-          ))}
-        </div>
-      )}
+            <div className="tag-list">
+              {scale.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="tag-chip"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </>
+        )}
     </section>
   );
 }
