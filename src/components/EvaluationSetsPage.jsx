@@ -365,37 +365,34 @@ const saveEditedUserSet = () => {
   <h3>{set.title}</h3>
 
   <div className="set-header-actions">
-    <button
-      type="button"
-      className="edit-set-button"
-      onClick={() => startEditUserSet(set)}
-    >
-      編集
-    </button>
 
-    <button
-      type="button"
-      className="delete-set-button"
-      onClick={(e) => {
-        e.stopPropagation();
-        deleteUserSet(set.id);
-      }}
-    >
-      削除
-    </button>
-  </div>
+  {editingSetId !== set.id && (
+    <>
+      <button
+        type="button"
+        className="edit-set-button"
+        onClick={() => startEditUserSet(set)}
+      >
+        編集
+      </button>
+
+      <button
+        type="button"
+        className="delete-set-button"
+        onClick={(e) => {
+          e.stopPropagation();
+          deleteUserSet(set.id);
+        }}
+      >
+        削除
+      </button>
+    </>
+  )}
+
+</div>
 </div>
 
-    <button
-  type="button"
-  className="delete-set-button"
-  onClick={(e) => {
-    e.stopPropagation();
-    deleteUserSet(set.id);
-  }}
->
-  削除
-</button>
+
 
   </div>
 
