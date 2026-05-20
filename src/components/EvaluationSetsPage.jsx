@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { evaluationSets } from "../data/sets/evaluationSets";
-import { userEvaluationSets }
-from "../data/sets/userEvaluationSets";
 
 export default function EvaluationSetsPage({
   scales,
@@ -209,11 +207,7 @@ const saveUserSet = () => {
     </>
   )}
 </div>
-
-{userEvaluationSets.length > 0 && (
-  <>
-    <h3>自作評価セット</h3>
-    {userSets.length > 0 && (
+{userSets.length > 0 && (
   <>
     <h3>自作評価セット</h3>
 
@@ -231,10 +225,7 @@ const saveUserSet = () => {
           {set.tags?.length > 0 && (
             <div className="tag-list">
               {set.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="tag-chip"
-                >
+                <span key={tag} className="tag-chip">
                   {tag}
                 </span>
               ))}
@@ -260,24 +251,6 @@ const saveUserSet = () => {
               );
             })}
           </div>
-        </div>
-      ))}
-    </div>
-
-    <h3>公式評価セット</h3>
-  </>
-)}
-    <div className="set-list">
-      {userEvaluationSets.map((set) => (
-        <div
-          className="set-card"
-          key={set.id}
-        >
-          <h4>{set.title}</h4>
-
-          <p className="description">
-            {set.description}
-          </p>
         </div>
       ))}
     </div>
@@ -326,7 +299,7 @@ const saveUserSet = () => {
             </div>
           </div>
         ))}
-      </div>
+            </div>
     </section>
   );
 }
