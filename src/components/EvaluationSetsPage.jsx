@@ -213,7 +213,60 @@ const saveUserSet = () => {
 {userEvaluationSets.length > 0 && (
   <>
     <h3>自作評価セット</h3>
+    {userSets.length > 0 && (
+  <>
+    <h3>自作評価セット</h3>
 
+    <div className="set-list">
+      {userSets.map((set) => (
+        <div className="set-card" key={set.id}>
+          <h3>{set.title}</h3>
+
+          {set.description && (
+            <p className="description">
+              {set.description}
+            </p>
+          )}
+
+          {set.tags?.length > 0 && (
+            <div className="tag-list">
+              {set.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="tag-chip"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+
+          <div className="set-scale-list">
+            {set.scales.map((scaleId) => {
+              const scale = findScale(scaleId);
+              if (!scale) return null;
+
+              return (
+                <button
+                  key={scale.id}
+                  className="scale-card"
+                  onClick={() => onSelectScale(scale.id)}
+                >
+                  <strong>
+                    {scale.shortTitle || scale.title}
+                  </strong>
+                  <span>{scale.title}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <h3>公式評価セット</h3>
+  </>
+)}
     <div className="set-list">
       {userEvaluationSets.map((set) => (
         <div
