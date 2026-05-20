@@ -360,9 +360,7 @@ const saveEditedUserSet = () => {
     </div>
   </div>
 )}
-
-<div className="set-header">
-  <h3>{set.title}</h3>
+<div className="set-card" key={set.id}>
 
   <div className="set-header-actions">
 
