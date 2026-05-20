@@ -41,7 +41,28 @@ export const isncsciScale = {
   },
 
   domains: [
-  {
+   {
+  id: "guide",
+  title: "ISNCSCI参照",
+
+  description:
+    "AIS分類、key muscle、key sensory pointを確認するための参照ページです。",
+
+  items: [
+    {
+      id: "reference-only",
+
+      label: "参照用",
+
+      type: "info",
+
+      description:
+        "このページは現在参照モードです。将来的にAIS自動判定へ拡張予定です。",
+    },
+  ],
+},  
+  
+    {
     id: "ais",
     title: "AIS分類",
     description:
