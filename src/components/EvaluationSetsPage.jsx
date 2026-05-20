@@ -65,24 +65,6 @@ const saveUserSet = () => {
     return;
   }
 
-const deleteUserSet = (setId) => {
-  const ok = window.confirm(
-    "この自作評価セットを削除しますか？\n削除したセットは元に戻せません。"
-  );
-
-  if (!ok) return;
-
-  setUserSets((prev) => {
-    const next = prev.filter((set) => set.id !== setId);
-
-    localStorage.setItem(
-      USER_SETS_KEY,
-      JSON.stringify(next)
-    );
-
-    return next;
-  });
-};
 
   const newSet = {
     id: `user-${Date.now()}`,
@@ -104,6 +86,24 @@ const deleteUserSet = (setId) => {
   setShowCreateForm(false);
 };
 
+const deleteUserSet = (setId) => {
+  const ok = window.confirm(
+    "この自作評価セットを削除しますか？\n削除したセットは元に戻せません。"
+  );
+
+  if (!ok) return;
+
+  setUserSets((prev) => {
+    const next = prev.filter((set) => set.id !== setId);
+
+    localStorage.setItem(
+      USER_SETS_KEY,
+      JSON.stringify(next)
+    );
+
+    return next;
+  });
+};
 
   return (
     <section className="card">
