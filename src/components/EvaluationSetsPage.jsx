@@ -66,16 +66,22 @@ const saveUserSet = () => {
   }
 
 const deleteUserSet = (setId) => {
-  const next = userSets.filter(
-    (set) => set.id !== setId
+  const ok = window.confirm(
+    "この自作評価セットを削除しますか？\n削除したセットは元に戻せません。"
   );
 
-  setUserSets(next);
+  if (!ok) return;
 
-  localStorage.setItem(
-    USER_SETS_KEY,
-    JSON.stringify(next)
-  );
+  setUserSets((prev) => {
+    const next = prev.filter((set) => set.id !== setId);
+
+    localStorage.setItem(
+      USER_SETS_KEY,
+      JSON.stringify(next)
+    );
+
+    return next;
+  });
 };
 
   const newSet = {
@@ -233,13 +239,15 @@ const deleteUserSet = (setId) => {
     <h3>{set.title}</h3>
 
     <button
-      className="delete-set-button"
-      onClick={() =>
-        deleteUserSet(set.id)
-      }
-    >
-      削除
-    </button>
+  type="button"
+  className="delete-set-button"
+  onClick={(e) => {
+    e.stopPropagation();
+    deleteUserSet(set.id);
+  }}
+>
+  削除
+</button>
 
   </div>
 
