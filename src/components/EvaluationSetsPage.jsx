@@ -7,6 +7,11 @@ export default function EvaluationSetsPage({
 }) {
   const [selectedTags, setSelectedTags] = useState([]);
   const [showTagFilter, setShowTagFilter] = useState(false);
+  const [editingSetId, setEditingSetId] = useState(null);
+const [editSetTitle, setEditSetTitle] = useState("");
+const [editSetDescription, setEditSetDescription] = useState("");
+const [editSetScaleIds, setEditSetScaleIds] = useState([]);
+  
   const findScale = (scaleId) =>
     scales.find((scale) => scale.id === scaleId);
 
@@ -103,6 +108,62 @@ const deleteUserSet = (setId) => {
 
     return next;
   });
+};
+
+const startEditUserSet = (set) => {
+  setEditingSetId(set.id);
+  setEditSetTitle(set.title);
+  setEditSetDescription(set.description ?? "");
+  setEditSetScaleIds(set.scales ?? []);
+};
+
+const cancelEditUserSet = () => {
+  setEditingSetId(null);
+  setEditSetTitle("");
+  setEditSetDescription("");
+  setEditSetScaleIds([]);
+};
+
+const toggleScaleInEditSet = (scaleId) => {
+  setEditSetScaleIds((prev) =>
+    prev.includes(scaleId)
+      ? prev.filter((id) => id !== scaleId)
+      : [...prev, scaleId]
+  );
+};
+
+const saveEditedUserSet = () => {
+  if (!editSetTitle.trim()) {
+    alert("セット名を入力してください。");
+    return;
+  }
+
+  if (editSetScaleIds.length === 0) {
+    alert("評価スコアを1つ以上選択してください。");
+    return;
+  }
+
+  setUserSets((prev) => {
+    const next = prev.map((set) =>
+      set.id === editingSetId
+        ? {
+            ...set,
+            title: editSetTitle.trim(),
+            description: editSetDescription.trim(),
+            scales: editSetScaleIds,
+          }
+        : set
+    );
+
+    localStorage.setItem(
+      USER_SETS_KEY,
+      JSON.stringify(next)
+    );
+
+    return next;
+  });
+
+  cancelEditUserSet();
 };
 
   return (
@@ -237,6 +298,93 @@ const deleteUserSet = (setId) => {
   <div className="set-header">
 
     <h3>{set.title}</h3>
+
+{editingSetId === set.id && (
+  <div className="set-form">
+    <label>
+      セット名
+      <input
+        className="search-input"
+        value={editSetTitle}
+        onChange={(e) => setEditSetTitle(e.target.value)}
+      />
+    </label>
+
+    <label>
+      説明
+      <input
+        className="search-input"
+        value={editSetDescription}
+        onChange={(e) => setEditSetDescription(e.target.value)}
+      />
+    </label>
+
+    <p className="description">
+      含める評価スコアを選択してください。
+    </p>
+
+    <div className="set-scale-list">
+      {scales.map((scale) => (
+        <button
+          key={scale.id}
+          type="button"
+          className={
+            editSetScaleIds.includes(scale.id)
+              ? "scale-card selected"
+              : "scale-card"
+          }
+          onClick={() => toggleScaleInEditSet(scale.id)}
+        >
+          <strong>{scale.shortTitle || scale.title}</strong>
+          <span>{scale.title}</span>
+        </button>
+      ))}
+    </div>
+
+    <div className="set-header-actions">
+      <button
+        type="button"
+        className="create-set-button"
+        onClick={saveEditedUserSet}
+      >
+        保存
+      </button>
+
+      <button
+        type="button"
+        className="delete-set-button"
+        onClick={cancelEditUserSet}
+      >
+        キャンセル
+      </button>
+    </div>
+  </div>
+)}
+
+<div className="set-header">
+  <h3>{set.title}</h3>
+
+  <div className="set-header-actions">
+    <button
+      type="button"
+      className="edit-set-button"
+      onClick={() => startEditUserSet(set)}
+    >
+      編集
+    </button>
+
+    <button
+      type="button"
+      className="delete-set-button"
+      onClick={(e) => {
+        e.stopPropagation();
+        deleteUserSet(set.id);
+      }}
+    >
+      削除
+    </button>
+  </div>
+</div>
 
     <button
   type="button"

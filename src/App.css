@@ -845,3 +845,22 @@ button {
 .font-large .delete-set-button {
   font-size: 14px;
 }
+
+.set-header-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.edit-set-button {
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 1px solid #2563eb;
+  background: white;
+  color: #2563eb;
+  font-size: 13px;
+}
+
+.font-large .edit-set-button {
+  font-size: 14px;
+}
