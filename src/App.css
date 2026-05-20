@@ -818,3 +818,30 @@ button {
   border-color: #2563eb;
   background: #eff6ff;
 }
+.set-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.delete-set-button {
+  padding: 6px 12px;
+
+  border-radius: 10px;
+
+  border: 1px solid #ef4444;
+
+  background: white;
+
+  color: #ef4444;
+
+  font-size: 13px;
+}
+
+.font-large .delete-set-button {
+  font-size: 14px;
+}

@@ -65,6 +65,19 @@ const saveUserSet = () => {
     return;
   }
 
+const deleteUserSet = (setId) => {
+  const next = userSets.filter(
+    (set) => set.id !== setId
+  );
+
+  setUserSets(next);
+
+  localStorage.setItem(
+    USER_SETS_KEY,
+    JSON.stringify(next)
+  );
+};
+
   const newSet = {
     id: `user-${Date.now()}`,
     title: newSetTitle.trim(),
@@ -214,7 +227,21 @@ const saveUserSet = () => {
     <div className="set-list">
       {userSets.map((set) => (
         <div className="set-card" key={set.id}>
-          <h3>{set.title}</h3>
+
+  <div className="set-header">
+
+    <h3>{set.title}</h3>
+
+    <button
+      className="delete-set-button"
+      onClick={() =>
+        deleteUserSet(set.id)
+      }
+    >
+      削除
+    </button>
+
+  </div>
 
           {set.description && (
             <p className="description">
