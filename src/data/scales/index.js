@@ -3,6 +3,7 @@ import { masScale } from "./mas";
 import { fimScale } from "./fim";
 import { biScale } from "./bi";
 import { scim3Scale } from "./scim3";
+import { isncsciScale } from "./isncsci";
 
 export const scales = [
   scimSrScale,
@@ -10,4 +11,5 @@ export const scales = [
   masScale,
   fimScale,
   biScale,
+  isncsciScale,
 ];
