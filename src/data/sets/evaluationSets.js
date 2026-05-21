@@ -6,6 +6,8 @@ export const evaluationSets = [
     description:
       "脳卒中回復期患者でよく使用する評価セット",
 
+
+      
     scales: [
       "fim",
       "bi",
@@ -27,6 +29,7 @@ export const evaluationSets = [
       "脊髄損傷患者向け評価セット",
 
     scales: [
+      "脊髄損傷患者向け評価セット",
       "scim-sr",
       "scim3",
     ],
@@ -34,6 +37,7 @@ export const evaluationSets = [
     tags: [
       "脊髄損傷",
       "ADL",
+      "神経学的評価",
     ],
   },
 
