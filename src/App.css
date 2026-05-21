@@ -745,11 +745,17 @@ button {
 
   min-height: 32px;
 
+  min-width: fit-content;
+
   display: inline-flex;
+
   align-items: center;
+
   justify-content: center;
 
   white-space: nowrap;
+
+  line-height: 1;
 }
 
 .tag-filter-button.active {
