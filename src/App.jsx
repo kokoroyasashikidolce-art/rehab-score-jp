@@ -399,14 +399,7 @@ if (loading) {
     <div className="splash-screen">
       <div className="splash-content">
         <img src="/icon-512.png" alt="SCIM-SR" className="splash-logo" />
-        <div className="brand-header">
-  <div className="brand-icon">✓</div>
-
-  <div className="brand-text">
-    <h1>リハすこ</h1>
-    <p>リハビリ評価スコア</p>
-  </div>
-</div>
+        <h1>リハすこ</h1>
         <p>Rehabilitation Score Platform</p>
       </div>
     </div>
@@ -422,13 +415,16 @@ return (
       : ""
   }`}
 >
-      <h1>
-        リハすこ
-        <br />
-        <span style={{ fontSize: "16px", fontWeight: "normal" }}>
-          Rehabilitation Score Platform
-        </span>
-      </h1>
+      <header className="main-header">
+  <div className="main-brand">
+    <span className="main-brand-mark">✓</span>
+
+    <div>
+      <h1>リハすこ</h1>
+      <p>リハビリ評価スコア</p>
+    </div>
+  </div>
+</header>
 
      {currentMenu === "home" && (
   <HomeDashboard onSelectMenu={setCurrentMenu} />
