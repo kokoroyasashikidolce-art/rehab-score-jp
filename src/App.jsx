@@ -399,7 +399,14 @@ if (loading) {
     <div className="splash-screen">
       <div className="splash-content">
         <img src="/icon-512.png" alt="SCIM-SR" className="splash-logo" />
-        <h1>リハすこ</h1>
+        <div className="brand-header">
+  <div className="brand-icon">✓</div>
+
+  <div className="brand-text">
+    <h1>リハすこ</h1>
+    <p>リハビリ評価スコア</p>
+  </div>
+</div>
         <p>Rehabilitation Score Platform</p>
       </div>
     </div>

@@ -898,3 +898,52 @@ button {
   min-width: 52px;
   height: 32px;
 }
+
+.brand-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 16px;
+  margin-bottom: 16px;
+
+  border-radius: 20px;
+  background: linear-gradient(135deg, #fff7ed, #ffffff);
+  border: 1px solid #fed7aa;
+
+  box-shadow: 0 6px 18px rgba(249, 115, 22, 0.12);
+}
+
+.brand-icon {
+  width: 46px;
+  height: 46px;
+
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fb923c, #f97316);
+
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 900;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-text h1 {
+  margin: 0;
+
+  color: #ea580c;
+  font-size: 28px;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+}
+
+.brand-text p {
+  margin: 4px 0 0;
+
+  color: #9a3412;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
