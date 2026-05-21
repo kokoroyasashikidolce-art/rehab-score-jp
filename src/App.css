@@ -727,31 +727,35 @@ button {
 .tag-filter {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 12px;
+  gap: 6px;
+  margin-top: 10px;
 }
 
 .tag-filter-button {
-  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #374151;
 
-  min-width: 80px;
+  border-radius: 999px;
 
-  height: 40px;
+  padding: 6px 10px;
 
-  display: flex;
+  font-size: 12px;
+  font-weight: 600;
 
+  min-height: 32px;
+
+  display: inline-flex;
   align-items: center;
-
   justify-content: center;
 
   white-space: nowrap;
 }
 
-
 .tag-filter-button.active {
-  background: #2563eb;
-  color: #ffffff;
-  border-color: #2563eb;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-color: #93c5fd;
 }
 
 .tag-filter-group {
