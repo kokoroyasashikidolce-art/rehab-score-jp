@@ -885,3 +885,12 @@ button {
 .tag-all-button {
   min-width: 56px;
 }
+.tag-filter .tag-filter-button {
+  min-height: 32px;
+  height: auto;
+  padding: 6px 10px;
+  line-height: 1.2;
+  width: auto;
+  min-width: auto;
+  flex: 0 0 auto;
+}
