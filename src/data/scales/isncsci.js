@@ -96,7 +96,10 @@ export const isncsciScale = {
       id: `motor-${item.level}`,
       label: `${item.level}：${item.muscle}`,
       type: "text",
-      description: `${item.action}。${item.example}`,
+      description:
+item.example
+? `${item.action}。${item.example}`
+: item.action,
     })),
   },
 
@@ -110,8 +113,10 @@ export const isncsciScale = {
       id: `sensory-${item.level}`,
       label: `${item.level}`,
       type: "text",
-      description:
-`${item.point}。${item.note}`,
+    description:
+item.note
+? `${item.point}。${item.note}`
+: item.point,
     })),
   },
 ],
