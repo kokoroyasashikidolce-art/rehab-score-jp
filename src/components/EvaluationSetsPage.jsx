@@ -249,16 +249,15 @@ export default function EvaluationSetsPage({
             </button>
 
             <div className="tag-filter">
-              <button
-                className={
-                  selectedTags.length === 0
-                    ? "tag-filter-button active"
-                    : "tag-filter-button"
-                }
-                onClick={() => setSelectedTags([])}
-              >
-                すべて
-              </button>
+             <button
+  className={
+    selectedTag === "all"
+      ? "tag-filter-button tag-all-button active"
+      : "tag-filter-button tag-all-button"
+  }
+>
+  すべて
+</button>
 
               {allTags.map((tag) => (
                 <button

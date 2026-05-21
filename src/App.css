@@ -881,3 +881,7 @@ button {
 .font-large .edit-set-button {
   font-size: 14px;
 }
+
+.tag-all-button {
+  min-width: 56px;
+}
