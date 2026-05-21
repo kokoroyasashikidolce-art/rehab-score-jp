@@ -421,7 +421,7 @@ return (
 
     <div>
       <h1>リハすこ</h1>
-      <p>リハビリ評価スコア</p>
+      
     </div>
   </div>
 </header>

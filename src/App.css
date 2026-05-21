@@ -899,22 +899,20 @@ button {
   height: 32px;
 }
 .main-header {
-  background: #ffffff;
+  background: #f97316;
 
-  padding: 14px 18px;
+  padding: 18px 16px;
 
   margin-bottom: 18px;
 
-  border: 3px solid #f97316;
-
-  border-radius: 24px;
+  border-radius: 0 0 28px 28px;
 
   box-shadow:
     0 4px 12px rgba(
       249,
       115,
       22,
-      0.12
+      0.18
     );
 }
 
