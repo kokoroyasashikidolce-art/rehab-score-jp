@@ -238,6 +238,19 @@ if (item.type === "special") {
 }
 
 if (!item.options) {
+if (item.type === "text") {
+  return (
+    <div className="item" key={item.id}>
+      <label>{item.label}</label>
+
+      {item.description && (
+        <p className="description">
+          {item.description}
+        </p>
+      )}
+    </div>
+  );
+}
   return (
     <div className="branch-item" key={item.id}>
       <h3>{item.title || item.name}</h3>
@@ -246,6 +259,7 @@ if (!item.options) {
       </p>
     </div>
   );
+
 }
 
 return (
