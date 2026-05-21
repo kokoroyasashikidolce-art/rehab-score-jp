@@ -932,26 +932,30 @@ button {
 .main-brand h1 {
   margin: 0;
 
-  color:  #f97316;
+  color: #f97316;
 
-  font-size: 44px;
+  font-size: 48px;
 
   font-weight: 900;
 
   line-height: 1;
 
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
 
   text-shadow:
-    0 3px 8px rgba(249,115,22,0.18);
+    0 3px 8px rgba(
+      249,
+      115,
+      22,
+      0.18
+    );
 
   font-family:
     "M PLUS Rounded 1c",
     "Hiragino Maru Gothic ProN",
     "Yu Gothic",
     sans-serif;
-}
 
-.main-brand p {
-  display: none;
+  -webkit-text-stroke:
+    0.6px #ea580c;
 }
