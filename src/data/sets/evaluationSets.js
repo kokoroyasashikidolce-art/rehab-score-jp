@@ -29,7 +29,7 @@ export const evaluationSets = [
       "脊髄損傷患者向け評価セット",
 
     scales: [
-      "脊髄損傷患者向け評価セット",
+      "isncsci",
       "scim-sr",
       "scim3",
     ],
