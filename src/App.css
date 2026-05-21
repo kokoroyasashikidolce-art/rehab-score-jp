@@ -901,7 +901,7 @@ button {
 .main-header {
   background: #f97316;
 
-  padding: 18px;
+  padding: 14px 14px;
 
   margin-bottom: 18px;
 
@@ -921,6 +921,7 @@ button {
       0.18
     );
 }
+
 .main-brand {
   background: #ffffff;
 
@@ -942,13 +943,10 @@ button {
       0.06
     );
 
-.main-brand-mark {
-  display: none;
-}
 .main-brand h1 {
   margin: 0;
 
-  color: #ea580c;
+  color: #f97316;
 
   font-size: 48px;
 
@@ -969,7 +967,7 @@ button {
       249,
       115,
       22,
-      0.12
+      0.10
     );
 }
   font-family:
