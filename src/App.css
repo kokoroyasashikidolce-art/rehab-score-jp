@@ -930,7 +930,7 @@ button {
 .main-brand h1 {
   margin: 0;
 
-  color: #f97316;
+  color: #ffffff;
 
   font-size: 48px;
 
@@ -941,12 +941,12 @@ button {
   letter-spacing: 0.02em;
 
   text-shadow:
-    0 3px 8px rgba(
-      249,
-      115,
-      22,
-      0.18
-    );
+0 3px 10px rgba(
+0,
+0,
+0,
+0.12
+);
 
   font-family:
     "M PLUS Rounded 1c",
@@ -955,5 +955,5 @@ button {
     sans-serif;
 
   -webkit-text-stroke:
-    0.6px #ea580c;
+    0.6px #ffffff;
 }
