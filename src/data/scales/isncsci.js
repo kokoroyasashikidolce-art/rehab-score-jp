@@ -1,6 +1,8 @@
 import { aisGrades } from "./references/aisGrades";
 import { keyMuscles } from "./references/keyMuscles";
 import { keySensoryPoints } from "./references/keySensoryPoints";
+import { isncsciTerms } from "./references/isncsciTerms";
+
 export const isncsciScale = {
   id: "isncsci",
   title:
@@ -51,16 +53,13 @@ export const isncsciScale = {
   items: [
     {
       id: "reference-only",
-
       label: "参照用",
-
-      type: "info",
-
+      type: "text",
       description:
-        "このページは現在参照モードです。将来的にAIS自動判定へ拡張予定です。",
+        "このページは現在参照モードです。AIS自動判定機能は今後追加予定です。",
     },
   ],
-},  
+},
   
     {
     id: "ais",
@@ -74,6 +73,20 @@ export const isncsciScale = {
       description: grade.description,
     })),
   },
+
+{
+  id: "terms",
+  title: "重要用語",
+  description:
+    "ISNCSCI / AIS 判定でよく使う用語です。",
+  items: isncsciTerms.map((term) => ({
+    id: term.id,
+    label: term.label,
+    type: "text",
+    description: term.description,
+  })),
+},
+
   {
     id: "motor",
     title: "Key muscle",
@@ -83,9 +96,11 @@ export const isncsciScale = {
       id: `motor-${item.level}`,
       label: `${item.level}：${item.muscle}`,
       type: "text",
-      description: item.action,
+      description: `${item.action}。${item.example}`,
     })),
   },
+
+  
   {
     id: "sensory",
     title: "Key sensory point",
@@ -95,7 +110,8 @@ export const isncsciScale = {
       id: `sensory-${item.level}`,
       label: `${item.level}`,
       type: "text",
-      description: item.point,
+      description:
+`${item.point}。${item.note}`,
     })),
   },
 ],

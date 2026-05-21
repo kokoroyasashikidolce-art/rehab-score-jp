@@ -1,30 +1,55 @@
 export const keySensoryPoints = [
-  { level: "C2", point: "後頭隆起" },
-  { level: "C3", point: "鎖骨上窩" },
-  { level: "C4", point: "肩鎖関節上" },
-  { level: "C5", point: "肘窩外側" },
-  { level: "C6", point: "母指" },
-  { level: "C7", point: "中指" },
-  { level: "C8", point: "小指" },
-  { level: "T1", point: "肘窩内側" },
-  { level: "T2", point: "腋窩" },
-  { level: "T3", point: "第3肋間" },
-  { level: "T4", point: "乳頭線" },
-  { level: "T5", point: "第5肋間" },
-  { level: "T6", point: "剣状突起" },
-  { level: "T7", point: "T6とT8の中間" },
-  { level: "T8", point: "肋骨弓" },
-  { level: "T9", point: "T8とT10の中間" },
-  { level: "T10", point: "臍" },
-  { level: "T11", point: "T10とT12の中間" },
-  { level: "T12", point: "鼠径靱帯中央" },
-  { level: "L1", point: "T12とL2の中間" },
-  { level: "L2", point: "大腿前面中央" },
-  { level: "L3", point: "大腿骨内側顆" },
-  { level: "L4", point: "内果" },
-  { level: "L5", point: "第3中足趾節関節背側" },
-  { level: "S1", point: "踵外側" },
-  { level: "S2", point: "膝窩中央" },
-  { level: "S3", point: "坐骨結節" },
-  { level: "S4-5", point: "肛門周囲" },
+  {
+    level: "C2",
+    point: "後頭隆起",
+    note: "後頭部中央付近",
+  },
+
+  {
+    level: "C3",
+    point: "鎖骨上窩",
+    note: "鎖骨上部中央",
+  },
+
+  {
+    level: "C4",
+    point: "肩鎖関節上",
+    note: "肩峰近傍",
+  },
+
+  {
+    level: "C5",
+    point: "肘窩外側",
+    note: "肘外側近位",
+  },
+
+  {
+    level: "C6",
+    point: "母指",
+    note: "母指背側IP関節部",
+  },
+
+  {
+    level: "C7",
+    point: "中指",
+    note: "中指背側IP関節部",
+  },
+
+  {
+    level: "C8",
+    point: "小指",
+    note: "小指背側IP関節部",
+  },
+
+  {
+    level: "T1",
+    point: "肘窩内側",
+    note: "上腕内側遠位",
+  },
+
+  {
+    level: "S4-5",
+    point: "肛門周囲",
+    note: "deep anal pressure と併せ確認",
+  },
 ];
