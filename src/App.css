@@ -894,3 +894,7 @@ button {
   min-width: auto;
   flex: 0 0 auto;
 }
+.tag-filter .tag-filter-button:first-child {
+  min-width: 52px;
+  height: 32px;
+}
