@@ -920,7 +920,8 @@ button {
 
   color: #f97316;
 
-  font-size: 52px;
+  font-size: 56px;
+-webkit-text-stroke: 1.2px #f97316;
 
   font-weight: 900;
 
