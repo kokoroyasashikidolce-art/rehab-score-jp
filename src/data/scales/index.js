@@ -10,6 +10,7 @@ import { rassScale } from "./rass";
 import { crsrScale } from "./crsr";
 import { fourScoreScale } from "./fourScore";
 import { camIcuScale } from "./camIcu";
+import { whimScale } from "./whim";
 
 export const scales = [
   jcsScale,
@@ -18,6 +19,7 @@ export const scales = [
   camIcuScale,
   fourScoreScale,
   crsrScale,
+  whimScale,
 
   isncsciScale,
   scimSrScale,
