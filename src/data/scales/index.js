@@ -9,11 +9,13 @@ import { gcsScale } from "./gcs";
 import { rassScale } from "./rass";
 import { crsrScale } from "./crsr";
 import { fourScoreScale } from "./fourScore";
+import { camIcuScale } from "./camIcu";
 
 export const scales = [
-  rassScale,
   jcsScale,
   gcsScale,
+  rassScale,
+  camIcuScale,
   fourScoreScale,
   crsrScale,
 
