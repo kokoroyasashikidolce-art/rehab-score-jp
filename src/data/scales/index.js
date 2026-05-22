@@ -11,6 +11,7 @@ import { crsrScale } from "./crsr";
 import { fourScoreScale } from "./fourScore";
 import { camIcuScale } from "./camIcu";
 import { whimScale } from "./whim";
+import { brunnstromScale } from "./brunnstrom";
 
 export const scales = [
   jcsScale,
@@ -20,6 +21,7 @@ export const scales = [
   fourScoreScale,
   crsrScale,
   whimScale,
+  brunnstromScale,
 
   isncsciScale,
   scimSrScale,
