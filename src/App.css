@@ -920,16 +920,26 @@ button {
 
   color: #f97316;
 
-  font-size: 48px;
+  font-size: 52px;
+
   font-weight: 900;
+
   line-height: 1;
-  letter-spacing: 0.04em;
+
+  letter-spacing: 0.02em;
 
   font-family:
     "M PLUS Rounded 1c",
     "Hiragino Maru Gothic ProN",
     "Yu Gothic",
     sans-serif;
+
+  /* 太く見せる */
+  -webkit-text-stroke: 1px #f97316;
+
+  text-shadow:
+    0 1px 0 #f97316,
+    0 2px 0 rgba(249,115,22,0.15);
 }
 
 .main-brand-mark,
