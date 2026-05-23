@@ -14,6 +14,7 @@ import { whimScale } from "./whim";
 import { brunnstromScale } from "./brunnstrom";
 import { siasScale } from "./sias";
 import { fmaScale } from "./fma";
+import { mmtScale } from "./mmt";
 
 export const scales = [
   jcsScale,
@@ -27,6 +28,7 @@ export const scales = [
   brunnstromScale,
   siasScale,
   fmaScale,
+  mmtScale,
 
   isncsciScale,
   scimSrScale,
