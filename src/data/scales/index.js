@@ -21,7 +21,7 @@ import { stefScale } from "./stef";
 import { boxBlockTestScale } from "./boxBlockTest";
 import { nineHolePegTestScale } from "./nineHolePegTest";
 import { wmftScale } from "./wmft";
-import { malScale } from "./mal";
+import { malScale } from "./mal.js";
 import { mftScale } from "./mft";
 
 export const scales = [
@@ -44,7 +44,7 @@ export const scales = [
   boxBlockTestScale,
   nineHolePegTestScale,
   wmftScale,
- 
+  malScale,
   mftScale,
 
   isncsciScale,
