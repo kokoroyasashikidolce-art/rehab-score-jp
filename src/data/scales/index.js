@@ -15,6 +15,9 @@ import { brunnstromScale } from "./brunnstrom";
 import { siasScale } from "./sias";
 import { fmaScale } from "./fma";
 import { mmtScale } from "./mmt";
+import { nihssScale } from "./nihss";
+import { aratScale } from "./arat";
+import { stefScale } from "./stef";
 
 export const scales = [
   jcsScale,
@@ -29,6 +32,10 @@ export const scales = [
   siasScale,
   fmaScale,
   mmtScale,
+  nihssScale,
+
+  aratScale,
+  stefScale,
 
   isncsciScale,
   scimSrScale,
