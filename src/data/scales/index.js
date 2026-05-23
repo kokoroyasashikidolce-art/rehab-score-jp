@@ -13,6 +13,7 @@ import { camIcuScale } from "./camIcu";
 import { whimScale } from "./whim";
 import { brunnstromScale } from "./brunnstrom";
 import { siasScale } from "./sias";
+import { fmaScale } from "./fma";
 
 export const scales = [
   jcsScale,
@@ -25,6 +26,7 @@ export const scales = [
   
   brunnstromScale,
   siasScale,
+  fmaScale,
 
   isncsciScale,
   scimSrScale,
