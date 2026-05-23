@@ -12,6 +12,7 @@ export const fmaScale = {
 
   categories: [
     "motor-function",
+    "upper-limb-function",
     "stroke",
   ],
 

@@ -18,6 +18,11 @@ import { mmtScale } from "./mmt";
 import { nihssScale } from "./nihss";
 import { aratScale } from "./arat";
 import { stefScale } from "./stef";
+import { boxBlockTestScale } from "./boxBlockTest";
+import { nineHolePegTestScale } from "./nineHolePegTest";
+import { wmftScale } from "./wmft";
+import { malScale } from "./mal";
+import { mftScale } from "./mft";
 
 export const scales = [
   jcsScale,
@@ -36,6 +41,11 @@ export const scales = [
 
   aratScale,
   stefScale,
+  boxBlockTestScale,
+  nineHolePegTestScale,
+  wmftScale,
+ 
+  mftScale,
 
   isncsciScale,
   scimSrScale,
