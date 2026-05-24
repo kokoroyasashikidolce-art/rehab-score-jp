@@ -23,6 +23,10 @@ import { nineHolePegTestScale } from "./nineHolePegTest";
 import { wmftScale } from "./wmft";
 import { malScale } from "./mal.js";
 import { mftScale } from "./mft";
+import { dashScale } from "./dash";
+import { jthftScale } from "./jthft";
+import { facScale } from "./fac";
+import { tugScale } from "./tug";
 
 export const scales = [
   jcsScale,
@@ -46,6 +50,11 @@ export const scales = [
   wmftScale,
   malScale,
   mftScale,
+  dashScale,
+  jthftScale,
+
+  facScale,
+  tugScale,
 
   isncsciScale,
   scimSrScale,
