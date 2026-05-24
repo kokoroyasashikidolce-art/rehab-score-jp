@@ -27,6 +27,10 @@ import { dashScale } from "./dash";
 import { jthftScale } from "./jthft";
 import { facScale } from "./fac";
 import { tugScale } from "./tug";
+import { tenMeterWalkTestScale } from "./tenMeterWalkTest";
+import { sixMinuteWalkTestScale } from "./sixMinuteWalkTest";
+import { bbsScale } from "./bbs";
+import { miniBestestScale } from "./miniBestest";
 
 export const scales = [
   jcsScale,
@@ -55,6 +59,10 @@ export const scales = [
 
   facScale,
   tugScale,
+  tenMeterWalkTestScale,
+  sixMinuteWalkTestScale,
+  bbsScale,
+  miniBestestScale,
 
   isncsciScale,
   scimSrScale,
