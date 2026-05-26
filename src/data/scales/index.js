@@ -31,6 +31,32 @@ import { tenMeterWalkTestScale } from "./tenMeterWalkTest";
 import { sixMinuteWalkTestScale } from "./sixMinuteWalkTest";
 import { bbsScale } from "./bbs";
 import { miniBestestScale } from "./miniBestest";
+import { passScale } from "./pass";
+import { fbsScale } from "./fbs";
+import { tinettiPomaScale } from "./tinettiPoma";
+import { dgiScale } from "./dgi";
+import { fgaScale } from "./fga";
+import { bestestScale } from "./bestest";
+import { frtScale } from "./frt";
+import { tisScale } from "./tis";
+import { fistScale } from "./fist";
+import { abcScale } from "./abcScale";
+import { fesIScale } from "./fesI";
+import { mctsibScale } from "./mctsib";
+import { twoMinuteWalkTestScale } from "./twoMinuteWalkTest";
+import { fogQScale } from "./fogQ";
+import { nfogQScale } from "./nfogQ";
+import { satcoScale } from "./satco";
+import { shuttleWalkTestScale } from "./shuttleWalkTest";
+import { efapScale } from "./efap";
+import { mtsScale } from "./mts";
+import { pennSpasmScale } from "./pennSpasm";
+import { scatsScale } from "./scats";
+import { mdsUpdrsScale } from "./mdsUpdrs";
+import { hoehnYahrScale } from "./hoehnYahr";
+import { nrsScale } from "./nrs";
+import { vasScale } from "./vas";
+import { faceScale } from "./faceScale";
 
 export const scales = [
   jcsScale,
@@ -60,15 +86,43 @@ export const scales = [
   facScale,
   tugScale,
   tenMeterWalkTestScale,
+  twoMinuteWalkTestScale,
   sixMinuteWalkTestScale,
+  shuttleWalkTestScale,
+  efapScale,
   bbsScale,
+  fbsScale,
+  frtScale,
+  bestestScale,
   miniBestestScale,
-
+  passScale,
+  tisScale,
+  fistScale,
+  satcoScale,
+  abcScale,
+  fesIScale,
+  mctsibScale,
+  tinettiPomaScale,
+  fogQScale,
+  nfogQScale,
+  dgiScale,
+  fgaScale,
   isncsciScale,
   scimSrScale,
   scim3Scale,
 
   masScale,
+  mtsScale,
+  pennSpasmScale,
+  scatsScale,
+
+  mdsUpdrsScale,
+  hoehnYahrScale,
+
+  nrsScale,
+  vasScale,
+  faceScale,
+
   fimScale,
   biScale,
 ];

@@ -11,10 +11,13 @@ export const fmaScale = {
   category: "motor-function",
 
   categories: [
-    "motor-function",
-    "upper-limb-function",
-    "stroke",
-  ],
+  "motor-function",
+  "upper-limb-function",
+  "mobility-gait",
+  "balance-posture",
+  "sensory-pain",
+  "stroke",
+],
 
   tags: [
     "脳卒中",
