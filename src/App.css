@@ -947,3 +947,48 @@ button {
 .main-brand p {
   display: none;
 }
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.category-section {
+  background: #ffffff;
+  border: 1px solid #fed7aa;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.category-toggle {
+  width: 100%;
+  border: none;
+  background: #fff7ed;
+  color: #ea580c;
+
+  padding: 14px 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 16px;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.category-count {
+  font-size: 12px;
+  font-weight: 700;
+  color: #f97316;
+  background: #ffffff;
+  border: 1px solid #fed7aa;
+  border-radius: 999px;
+  padding: 4px 8px;
+}
+
+.category-section .scale-list {
+  padding: 12px;
+}

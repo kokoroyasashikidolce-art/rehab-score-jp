@@ -119,20 +119,44 @@ export default function ScaleList({ scales, onSelectScale }) {
               {category.description}
             </p>
 
-            <div className="scale-list">
-              {categoryScales.map((scale) => (
-                <button
-                  key={scale.id}
-                  className="scale-card"
-                  onClick={() => onSelectScale(scale.id)}
-                >
-                  <strong>
-                    {scale.shortTitle || scale.title}
-                  </strong>
-                  <span>{scale.title}</span>
-                </button>
-              ))}
-            </div>
+           <div className="category-list">
+  {scalesByCategory
+    .filter((category) => category.scales.length > 0)
+    .map((category) => (
+      <div key={category.id} className="category-section">
+        <button
+          type="button"
+          className="category-toggle"
+          onClick={() =>
+            setOpenCategoryId(
+              openCategoryId === category.id ? null : category.id
+            )
+          }
+        >
+          <span>{category.label}</span>
+          <span className="category-count">
+            {category.scales.length}件
+          </span>
+        </button>
+
+        {openCategoryId === category.id && (
+          <div className="scale-list">
+            {category.scales.map((scale) => (
+              <button
+                key={scale.id}
+                type="button"
+                className="scale-card"
+                onClick={() => setSelectedScaleId(scale.id)}
+              >
+                <strong>{scale.shortTitle}</strong>
+                <span>{scale.headerTitle}</span>
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+    ))}
+</div>
           </div>
         );
       })}

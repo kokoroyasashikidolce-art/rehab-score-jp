@@ -34,6 +34,7 @@ export default function App() {
     (scale) => scale.id === "scim-sr"
 
   );
+
   const [loading, setLoading] = useState(true);
   const simpleDomains = scimSrScale.domains;
   const [currentMenu, setCurrentMenu] = useState("home");
@@ -344,6 +345,7 @@ useEffect(() => {
   const selectedSimpleCount = Object.values(scores).filter(
     (value) => value !== ""
   ).length;
+  
 
   const selectedBranchCount = [
     respirationScore,
