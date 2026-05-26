@@ -9,6 +9,7 @@ export default function ScaleList({ scales, onSelectScale }) {
     new Set(scales.flatMap((scale) => scale.tags ?? []))
   );
 
+  const [openCategoryId, setOpenCategoryId] = useState(null);
   const toggleTag = (tag) => {
   setSelectedTags((prev) =>
     prev.includes(tag)
@@ -25,6 +26,35 @@ export default function ScaleList({ scales, onSelectScale }) {
           scale.tags?.includes(tag)
         )
       );
+
+  const categoryDefinitions = [
+  { id: "consciousness", label: "意識・覚醒" },
+  { id: "motor-function", label: "運動機能" },
+  { id: "upper-limb-function", label: "上肢機能" },
+  { id: "mobility-gait", label: "歩行・移動" },
+  { id: "balance-posture", label: "バランス・姿勢" },
+  { id: "tone-spasticity", label: "筋緊張・不随意運動" },
+  { id: "sensory-pain", label: "感覚・疼痛" },
+  { id: "higher-brain-function", label: "高次脳機能" },
+  { id: "language-communication", label: "言語・コミュニケーション" },
+  { id: "swallowing-nutrition", label: "嚥下・栄養" },
+  { id: "bladder-bowel", label: "排尿・排便" },
+  { id: "adl-iadl", label: "ADL・IADL" },
+  { id: "qol-psychology", label: "QOL・心理" },
+  { id: "cardiopulmonary", label: "心肺機能" },
+  { id: "development", label: "発達" },
+  { id: "stroke", label: "脳卒中" },
+  { id: "spinal-cord-injury", label: "脊髄損傷" },
+  { id: "parkinson", label: "パーキンソン病" },
+  { id: "orthopedic", label: "運動器・整形" },
+];
+
+const scalesByCategory = categoryDefinitions.map((category) => ({
+  ...category,
+  scales: filteredScales.filter((scale) =>
+    scale.categories?.includes(category.id)
+  ),
+}));
 
   return (
     <section className="card">
