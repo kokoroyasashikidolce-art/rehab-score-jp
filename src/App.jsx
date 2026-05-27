@@ -45,8 +45,6 @@ export default function App() {
   const SETTINGS_KEY = "rehab-score-settings";
 
 const [settings, setSettings] = useState(() => {
-  const [scaleListCommand, setScaleListCommand] =
-  useState(null);
   const saved = localStorage.getItem(SETTINGS_KEY);
 
   return saved
@@ -206,8 +204,6 @@ const [mobility, setMobility] = useState(
     outdoor: { method: "", wheelchair: "", walking: "" },
   }
 );
-
-
 
   useEffect(() => {
   const timer = setTimeout(() => {

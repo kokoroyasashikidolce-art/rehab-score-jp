@@ -11,7 +11,7 @@ export default function AppHeader({
         onClick={onBack}
         aria-label="戻る"
       >
-        ＜
+        ←
       </button>
 
       <div className="header-left">
