@@ -40,6 +40,8 @@ export default function App() {
   const [currentMenu, setCurrentMenu] = useState("home");
   const [selectedScaleId, setSelectedScaleId] = useState(null);
   const [scaleListCommand, setScaleListCommand] = useState(null);
+  const [openScaleCategoryIds, setOpenScaleCategoryIds] =
+  useState([]);
   const [previousMenu, setPreviousMenu] = useState("scale-list");
 
   const SETTINGS_KEY = "rehab-score-settings";
@@ -457,24 +459,16 @@ return (
 <ScaleList
   scales={scales}
   scaleListCommand={scaleListCommand}
-  onCommandHandled={() =>
-    setScaleListCommand(null)
-  }
+  onCommandHandled={() =>    setScaleListCommand(null)  }
+  openCategoryIds={openScaleCategoryIds}
+onOpenCategoryIdsChange={setOpenScaleCategoryIds}
   onSelectScale={(scaleId) => {
     setSelectedScaleId(scaleId);
-
     addRecentScale(scaleId);
-
-    updateSettings({
-      lastScaleId: scaleId,
-    });
-
+    updateSettings({      lastScaleId: scaleId,    });
     setPreviousMenu("scale-list");
-
     saveCurrentScroll("scale-list");
-
     setCurrentMenu("scale-detail");
-
     window.scrollTo(0, 0);
   }}
 />

@@ -6,10 +6,13 @@ export default function ScaleList({
   onSelectScale,
   scaleListCommand,
   onCommandHandled,
+  openCategoryIds,
+  onOpenCategoryIdsChange,
 }) {
+  
   const [selectedTags, setSelectedTags] = useState([]);
   const [showTagFilter, setShowTagFilter] = useState(false);
-  const [openCategoryIds, setOpenCategoryIds] = useState([]);
+  
 
   const allTags = Array.from(
     new Set(scales.flatMap((scale) => scale.tags ?? []))
@@ -55,15 +58,15 @@ export default function ScaleList({
     if (!scaleListCommand) return;
 
     if (scaleListCommand === "expand") {
-      setOpenCategoryIds(
-        scalesByCategory
-          .filter((category) => category.scales.length > 0)
-          .map((category) => category.id)
-      );
+      onOpenCategoryIdsChange(
+  scalesByCategory
+    .filter((category) => category.scales.length > 0)
+    .map((category) => category.id)
+);
     }
 
     if (scaleListCommand === "collapse") {
-      setOpenCategoryIds([]);
+     onOpenCategoryIdsChange([]);
     }
 
     onCommandHandled?.();
@@ -78,12 +81,12 @@ export default function ScaleList({
   };
 
   const toggleCategory = (categoryId) => {
-    setOpenCategoryIds((prev) =>
-      prev.includes(categoryId)
-        ? prev.filter((id) => id !== categoryId)
-        : [...prev, categoryId]
-    );
-  };
+  onOpenCategoryIdsChange((prev) =>
+    prev.includes(categoryId)
+      ? prev.filter((id) => id !== categoryId)
+      : [...prev, categoryId]
+  );
+};
 
   return (
     <section className="card">
