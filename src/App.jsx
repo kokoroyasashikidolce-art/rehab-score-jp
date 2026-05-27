@@ -454,7 +454,7 @@ return (
   }
 />
 
-  <ScaleList
+<ScaleList
   scales={scales}
   scaleListCommand={scaleListCommand}
   onCommandHandled={() =>
@@ -462,6 +462,20 @@ return (
   }
   onSelectScale={(scaleId) => {
     setSelectedScaleId(scaleId);
+
+    addRecentScale(scaleId);
+
+    updateSettings({
+      lastScaleId: scaleId,
+    });
+
+    setPreviousMenu("scale-list");
+
+    saveCurrentScroll("scale-list");
+
+    setCurrentMenu("scale-detail");
+
+    window.scrollTo(0, 0);
   }}
 />
   </>
