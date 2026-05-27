@@ -992,3 +992,25 @@ button {
 .category-section .scale-list {
   padding: 12px;
 }
+
+.category-actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.category-action-button {
+  border: none;
+
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  background: #fff7ed;
+
+  color: #ea580c;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}

@@ -4,7 +4,8 @@ import { tagGroups } from "../data/taxonomy/tagDictionary";
 export default function ScaleList({ scales, onSelectScale }) {
   const [selectedTags, setSelectedTags] = useState([]);
   const [showTagFilter, setShowTagFilter] = useState(false);
-  const [openCategoryId, setOpenCategoryId] = useState(null);
+ const [openCategoryIds, setOpenCategoryIds] =
+  useState([]);
 
   const allTags = Array.from(
     new Set(scales.flatMap((scale) => scale.tags ?? []))
@@ -55,6 +56,29 @@ export default function ScaleList({ scales, onSelectScale }) {
       scale.categories?.includes(category.id)
     ),
   }));
+
+  const toggleCategory = (categoryId) => {
+  setOpenCategoryIds((prev) =>
+    prev.includes(categoryId)
+      ? prev.filter((id) => id !== categoryId)
+      : [...prev, categoryId]
+  );
+};
+
+const expandAll = () => {
+  setOpenCategoryIds(
+    scalesByCategory
+      .filter(
+        (category) =>
+          category.scales.length > 0
+      )
+      .map((category) => category.id)
+  );
+};
+
+const collapseAll = () => {
+  setOpenCategoryIds([]);
+};
 
   return (
     <section className="card">
@@ -128,6 +152,22 @@ export default function ScaleList({ scales, onSelectScale }) {
           </>
         )}
       </div>
+      
+      <div className="category-actions">
+  <button
+    className="category-action-button"
+    onClick={expandAll}
+  >
+    全て表示
+  </button>
+
+  <button
+    className="category-action-button"
+    onClick={collapseAll}
+  >
+    全て閉じる
+  </button>
+</div>
 
       <div className="category-list">
         {scalesByCategory
@@ -138,12 +178,8 @@ export default function ScaleList({ scales, onSelectScale }) {
                 type="button"
                 className="category-toggle"
                 onClick={() =>
-                  setOpenCategoryId(
-                    openCategoryId === category.id
-                      ? null
-                      : category.id
-                  )
-                }
+  toggleCategory(category.id)
+}
               >
                 <span>{category.label}</span>
 
@@ -152,7 +188,9 @@ export default function ScaleList({ scales, onSelectScale }) {
                 </span>
               </button>
 
-              {openCategoryId === category.id && (
+             openCategoryIds.includes(
+  category.id
+) && (
                 <div className="scale-list">
                   {category.scales.map((scale) => (
                     <button
@@ -166,7 +204,7 @@ export default function ScaleList({ scales, onSelectScale }) {
                     </button>
                   ))}
                 </div>
-              )}
+              )
             </div>
           ))}
       </div>
