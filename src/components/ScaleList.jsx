@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { tagGroups } from "../data/taxonomy/tagDictionary";
 
-
 export default function ScaleList({
   scales,
   onSelectScale,
@@ -10,28 +9,17 @@ export default function ScaleList({
 }) {
   const [selectedTags, setSelectedTags] = useState([]);
   const [showTagFilter, setShowTagFilter] = useState(false);
- const [openCategoryIds, setOpenCategoryIds] =
-  useState([]);
+  const [openCategoryIds, setOpenCategoryIds] = useState([]);
 
   const allTags = Array.from(
     new Set(scales.flatMap((scale) => scale.tags ?? []))
   );
 
-  const toggleTag = (tag) => {
-    setSelectedTags((prev) =>
-      prev.includes(tag)
-        ? prev.filter((t) => t !== tag)
-        : [...prev, tag]
-    );
-  };
-
   const filteredScales =
     selectedTags.length === 0
       ? scales
       : scales.filter((scale) =>
-          selectedTags.every((tag) =>
-            scale.tags?.includes(tag)
-          )
+          selectedTags.every((tag) => scale.tags?.includes(tag))
         );
 
   const categoryDefinitions = [
@@ -64,45 +52,38 @@ export default function ScaleList({
   }));
 
   useEffect(() => {
-  if (!scaleListCommand) return;
+    if (!scaleListCommand) return;
 
-  if (scaleListCommand === "expand") {
-    setOpenCategoryIds(
-      scalesByCategory
-        .filter((category) => category.scales.length > 0)
-        .map((category) => category.id)
+    if (scaleListCommand === "expand") {
+      setOpenCategoryIds(
+        scalesByCategory
+          .filter((category) => category.scales.length > 0)
+          .map((category) => category.id)
+      );
+    }
+
+    if (scaleListCommand === "collapse") {
+      setOpenCategoryIds([]);
+    }
+
+    onCommandHandled?.();
+  }, [scaleListCommand]);
+
+  const toggleTag = (tag) => {
+    setSelectedTags((prev) =>
+      prev.includes(tag)
+        ? prev.filter((t) => t !== tag)
+        : [...prev, tag]
     );
-  }
+  };
 
-  if (scaleListCommand === "collapse") {
-    setOpenCategoryIds([]);
-  }
-
-  onCommandHandled?.();
-}, [scaleListCommand]);
-   
   const toggleCategory = (categoryId) => {
-  setOpenCategoryIds((prev) =>
-    prev.includes(categoryId)
-      ? prev.filter((id) => id !== categoryId)
-      : [...prev, categoryId]
-  );
-};
-
-const expandAll = () => {
-  setOpenCategoryIds(
-    scalesByCategory
-      .filter(
-        (category) =>
-          category.scales.length > 0
-      )
-      .map((category) => category.id)
-  );
-};
-
-const collapseAll = () => {
-  setOpenCategoryIds([]);
-};
+    setOpenCategoryIds((prev) =>
+      prev.includes(categoryId)
+        ? prev.filter((id) => id !== categoryId)
+        : [...prev, categoryId]
+    );
+  };
 
   return (
     <section className="card">
@@ -113,8 +94,6 @@ const collapseAll = () => {
             onClick={() => setShowTagFilter(true)}
           >
             タグでフィルタ
-            {selectedTags.length > 0 &&
-              `（${selectedTags.length}件選択中）`}
           </button>
         )}
 
@@ -125,8 +104,6 @@ const collapseAll = () => {
               onClick={() => setShowTagFilter(false)}
             >
               タグフィルタを隠す
-              {selectedTags.length > 0 &&
-                `（${selectedTags.length}件選択中）`}
             </button>
 
             <div className="tag-filter">
@@ -150,9 +127,7 @@ const collapseAll = () => {
 
                 return (
                   <div className="tag-filter-group" key={group.id}>
-                    <p className="tag-filter-group-title">
-                      {group.title}
-                    </p>
+                    <p className="tag-filter-group-title">{group.title}</p>
 
                     <div className="tag-filter">
                       {availableTags.map((tag) => (
@@ -176,22 +151,6 @@ const collapseAll = () => {
           </>
         )}
       </div>
-      
-      <div className="category-actions">
-  <button
-    className="category-action-button"
-    onClick={expandAll}
-  >
-    全て表示
-  </button>
-
-  <button
-    className="category-action-button"
-    onClick={collapseAll}
-  >
-    全て閉じる
-  </button>
-</div>
 
       <div className="category-list">
         {scalesByCategory
@@ -201,20 +160,15 @@ const collapseAll = () => {
               <button
                 type="button"
                 className="category-toggle"
-                onClick={() =>
-  toggleCategory(category.id)
-}
+                onClick={() => toggleCategory(category.id)}
               >
                 <span>{category.label}</span>
-
                 <span className="category-count">
                   {category.scales.length}件
                 </span>
               </button>
 
-             openCategoryIds.includes(
-  category.id
-) && (
+              {openCategoryIds.includes(category.id) && (
                 <div className="scale-list">
                   {category.scales.map((scale) => (
                     <button
@@ -228,7 +182,7 @@ const collapseAll = () => {
                     </button>
                   ))}
                 </div>
-              )
+              )}
             </div>
           ))}
       </div>
