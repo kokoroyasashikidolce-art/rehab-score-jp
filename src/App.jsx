@@ -39,6 +39,7 @@ export default function App() {
   const simpleDomains = scimSrScale.domains;
   const [currentMenu, setCurrentMenu] = useState("home");
   const [selectedScaleId, setSelectedScaleId] = useState(null);
+  const [scaleListCommand, setScaleListCommand] = useState(null);
   const [previousMenu, setPreviousMenu] = useState("scale-list");
 
   const SETTINGS_KEY = "rehab-score-settings";
@@ -435,13 +436,29 @@ return (
 {currentMenu === "scale-list" && !selectedScale && (
   <>
     <AppHeader
-      title="評価一覧"
-      onBack={() => setCurrentMenu("home")}
-    />
+  title="評価一覧"
+  onBack={() => setCurrentMenu("home")}
+  leftContent={
+    <button
+      className="header-mini-button"
+      onClick={() => setScaleListCommand("expand")}
+    >
+      全て表示
+    </button>
+  }
+  rightContent={
+    <button
+      className="header-mini-button"
+      onClick={() => setScaleListCommand("collapse")}
+    >
+      全て閉じる
+    </button>
+  }
+/>
 
     <ScaleList
-      scales={scales}
-      onSelectScale={(scaleId) => {
+  scales={scales}
+  onSelectScale={(scaleId) => {
          setSelectedScaleId(scaleId);
          addRecentScale(scaleId);
          updateSettings({

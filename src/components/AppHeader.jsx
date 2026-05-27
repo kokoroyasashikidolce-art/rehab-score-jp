@@ -1,7 +1,8 @@
 export default function AppHeader({
   title,
   onBack,
-  rightContent = null,
+  leftContent,
+  rightContent,
 }) {
   return (
     <div className="scale-fixed-header">
@@ -23,6 +24,10 @@ export default function AppHeader({
           <path d="M15 18l-6-6 6-6" />
         </svg>
       </button>
+
+      <div className="header-left">
+        {leftContent}
+      </div>
 
       <div className="scale-header-title">
         {title}

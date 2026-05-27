@@ -999,18 +999,21 @@ button {
   margin-bottom: 12px;
 }
 
-.category-action-button {
+.header-left,
+.header-right {
+  min-width: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-mini-button {
   border: none;
-
-  padding: 8px 14px;
-
-  border-radius: 999px;
-
   background: #fff7ed;
-
   color: #ea580c;
-
+  border-radius: 999px;
+  padding: 6px 9px;
+  font-size: 12px;
   font-weight: 700;
-
-  cursor: pointer;
+  white-space: nowrap;
 }

@@ -1,7 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { tagGroups } from "../data/taxonomy/tagDictionary";
 
-export default function ScaleList({ scales, onSelectScale }) {
+
+export default function ScaleList({
+  scales,
+  onSelectScale,
+  scaleListCommand,
+  onCommandHandled,
+}) {
   const [selectedTags, setSelectedTags] = useState([]);
   const [showTagFilter, setShowTagFilter] = useState(false);
  const [openCategoryIds, setOpenCategoryIds] =
@@ -57,6 +63,24 @@ export default function ScaleList({ scales, onSelectScale }) {
     ),
   }));
 
+  useEffect(() => {
+  if (!scaleListCommand) return;
+
+  if (scaleListCommand === "expand") {
+    setOpenCategoryIds(
+      scalesByCategory
+        .filter((category) => category.scales.length > 0)
+        .map((category) => category.id)
+    );
+  }
+
+  if (scaleListCommand === "collapse") {
+    setOpenCategoryIds([]);
+  }
+
+  onCommandHandled?.();
+}, [scaleListCommand]);
+   
   const toggleCategory = (categoryId) => {
   setOpenCategoryIds((prev) =>
     prev.includes(categoryId)
