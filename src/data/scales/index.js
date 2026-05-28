@@ -58,6 +58,11 @@ import { nrsScale } from "./nrs";
 import { vasScale } from "./vas";
 import { faceScale } from "./faceScale";
 import { dn4Scale } from "./dn4";
+import { painDetectScale } from "./painDetect";
+import { lanssScale } from "./lanss";
+import { sfMpqScale } from "./sfMpq";
+import { bpiScale } from "./bpi";
+import { csiScale } from "./csi";
 
 export const scales = [
   jcsScale,
@@ -124,7 +129,12 @@ export const scales = [
   vasScale,
   faceScale,
   dn4Scale,
-  
+  painDetectScale,
+lanssScale,
+sfMpqScale,
+bpiScale,
+csiScale,
+
 
   fimScale,
   biScale,
