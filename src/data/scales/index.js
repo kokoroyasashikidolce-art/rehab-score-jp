@@ -57,6 +57,7 @@ import { hoehnYahrScale } from "./hoehnYahr";
 import { nrsScale } from "./nrs";
 import { vasScale } from "./vas";
 import { faceScale } from "./faceScale";
+import { dn4Scale } from "./dn4";
 
 export const scales = [
   jcsScale,
@@ -122,6 +123,8 @@ export const scales = [
   nrsScale,
   vasScale,
   faceScale,
+  dn4Scale,
+  
 
   fimScale,
   biScale,
