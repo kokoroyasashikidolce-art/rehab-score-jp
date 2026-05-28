@@ -63,6 +63,15 @@ import { lanssScale } from "./lanss";
 import { sfMpqScale } from "./sfMpq";
 import { bpiScale } from "./bpi";
 import { csiScale } from "./csi";
+import { hdsrScale } from "./hdsr";
+import { mmseScale } from "./mmse";
+import { mocaScale } from "./moca";
+import { fabScale } from "./fab";
+import { tmtScale } from "./tmt";
+import { bitScale } from "./bit";
+import { cbsScale } from "./cbs";
+import { rbmtScale } from "./rbmt";
+import { badsScale } from "./bads";
 
 export const scales = [
   jcsScale,
@@ -130,11 +139,20 @@ export const scales = [
   faceScale,
   dn4Scale,
   painDetectScale,
-lanssScale,
-sfMpqScale,
-bpiScale,
-csiScale,
+  lanssScale,
+  sfMpqScale,
+  bpiScale,
+  csiScale,
 
+  hdsrScale,
+  mmseScale,
+  mocaScale,
+  fabScale,
+  tmtScale,
+  bitScale,
+  cbsScale,
+  rbmtScale,
+  badsScale,
 
   fimScale,
   biScale,
