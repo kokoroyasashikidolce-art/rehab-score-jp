@@ -87,6 +87,12 @@ import { wcstScale } from "./wcst";
 import { stroopScale } from "./stroop";
 import { sdmtScale } from "./sdmt";
 import { vptaScale } from "./vpta";
+import { rcpmScale } from "./rcpm";
+import { pcrsScale } from "./pcrs";
+import { dexScale } from "./dex";
+import { kanaPickoutScale } from "./kanaPickout";
+import { ciqScale } from "./ciq";
+import { tbi31Scale } from "./tbi31";
 
 export const scales = [
   jcsScale,
@@ -183,6 +189,12 @@ export const scales = [
   stroopScale,
   sdmtScale,
   vptaScale,
+  rcpmScale,
+  pcrsScale,
+  dexScale,
+  kanaPickoutScale,
+  ciqScale,
+  tbi31Scale,
 
   fimScale,
   biScale,
