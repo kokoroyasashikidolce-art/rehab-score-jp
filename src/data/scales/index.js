@@ -72,6 +72,21 @@ import { bitScale } from "./bit";
 import { cbsScale } from "./cbs";
 import { rbmtScale } from "./rbmt";
 import { badsScale } from "./bads";
+import { catScale } from "./cat";
+import { casScale } from "./cas";
+import { rocftScale } from "./rocft";
+import { sdsaScale } from "./sdsa";
+import { splaScale } from "./spla";
+import { wais3Scale } from "./wais3";
+import { wais4Scale } from "./wais4";
+import { wmsrScale } from "./wmsr";
+import { wisc4Scale } from "./wisc4";
+import { wisc5Scale } from "./wisc5";
+import { kohsScale } from "./kohs";
+import { wcstScale } from "./wcst";
+import { stroopScale } from "./stroop";
+import { sdmtScale } from "./sdmt";
+import { vptaScale } from "./vpta";
 
 export const scales = [
   jcsScale,
@@ -153,6 +168,21 @@ export const scales = [
   cbsScale,
   rbmtScale,
   badsScale,
+  catScale,
+  casScale,
+  rocftScale,
+  sdsaScale,
+  splaScale,
+  wais3Scale,
+  wais4Scale,
+  wmsrScale,
+  wisc4Scale,
+  wisc5Scale,
+  kohsScale,
+  wcstScale,
+  stroopScale,
+  sdmtScale,
+  vptaScale,
 
   fimScale,
   biScale,
