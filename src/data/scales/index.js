@@ -93,6 +93,11 @@ import { dexScale } from "./dex";
 import { kanaPickoutScale } from "./kanaPickout";
 import { ciqScale } from "./ciq";
 import { tbi31Scale } from "./tbi31";
+import { kwcstScale } from "./kwcst";
+import { sltaScale } from "./slta";
+import { wabScale } from "./wab";
+import { dysarthriaAssessmentScale } from "./dysarthriaAssessment";
+import { fda2Scale } from "./fda2";
 
 export const scales = [
   jcsScale,
@@ -175,6 +180,8 @@ export const scales = [
   rbmtScale,
   badsScale,
   catScale,
+  kwcstScale,
+  wcstScale,
   casScale,
   rocftScale,
   sdsaScale,
@@ -185,7 +192,6 @@ export const scales = [
   wisc4Scale,
   wisc5Scale,
   kohsScale,
-  wcstScale,
   stroopScale,
   sdmtScale,
   vptaScale,
@@ -195,6 +201,11 @@ export const scales = [
   kanaPickoutScale,
   ciqScale,
   tbi31Scale,
+  
+  sltaScale,
+  wabScale,
+  dysarthriaAssessmentScale,
+  fda2Scale,
 
   fimScale,
   biScale,
