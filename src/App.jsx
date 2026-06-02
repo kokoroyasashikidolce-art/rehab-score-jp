@@ -28,6 +28,7 @@ import SearchPage from "./components/SearchPage";
 import InfoPage from "./components/InfoPage";
 import SettingsPage from "./components/SettingsPage";
 import EvaluationSetsPage from "./components/EvaluationSetsPage";
+import ReferenceList from "./components/common/ReferenceList";
 
 export default function App() {
   const scimSrScale = scales.find(
@@ -699,6 +700,8 @@ onOpenCategoryIdsChange={setOpenScaleCategoryIds}
       <p className="overview-content">
         {selectedScale.tabs?.overview ?? "概要は未登録です。"}
       </p>
+      
+      <ReferenceList references={selectedScale.references} />
 
       {selectedScale.tags?.length > 0 && (
         <div className="tag-list">
@@ -723,6 +726,8 @@ onOpenCategoryIdsChange={setOpenScaleCategoryIds}
       <p className="tips-content">
         {selectedScale.tabs?.tips ?? "豆知識は未登録です。"}
       </p>
+      
+      <ReferenceList references={selectedScale.references} />
 
       {selectedScale.tags?.length > 0 && (
         <div className="tag-list">

@@ -1053,3 +1053,34 @@ button {
   font-weight: 700;
   white-space: nowrap;
 }
+
+.reference-list {
+  margin-top: 16px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 12px;
+}
+
+.reference-toggle {
+  width: 100%;
+  border: none;
+  background: #fff7ed;
+  color: #ea580c;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 800;
+  text-align: left;
+  cursor: pointer;
+}
+
+.reference-items {
+  margin: 12px 0 0;
+  padding-left: 20px;
+  color: #4b5563;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.reference-items li {
+  margin-bottom: 8px;
+}

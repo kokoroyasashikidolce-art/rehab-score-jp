@@ -1,19 +1,23 @@
 あなたはReact / JavaScriptで医療系Webアプリのデータ構造を整備するアシスタントです。
 
-以下に示す「アプリ表示用データ」をもとに、リハビリテーション評価スコア集約アプリ「リハすこ」の `評価スコア.js` に転記できる JavaScript オブジェクト形式のコードを作成してください。
+以下に示す「アプリ表示用データ」をもとに、リハビリテーション評価スコア集約アプリ「リハすこ」の `評価スコア.js` を作成してください。
 
 # 目的
 
-アプリ内で以下を実装しやすくするため、本文と参考文献を分離したデータ構造に変換する。
+アプリ内で以下を実装しやすい構造に変換する。
 
+- 評価一覧表示
 - 概要タブ表示
 - 豆知識タブ表示
-- 本文中の引用番号タップで参考文献を展開
-- 参考文献だけ折りたたみ表示
+- 参考文献表示
+- 検索機能
+- タグ検索
+- カテゴリ検索
+- お気に入り登録
 
 # 入力
 
-以下の形式で、すでに作成済みのアプリ表示用データを貼り付けます。
+以下の形式でアプリ表示用データが与えられる。
 
 - 概要タブ
 - 豆知識タブ
@@ -21,59 +25,181 @@
 
 # 出力ルール
 
-- 入力された文章内容は原則として変更しない
-- 引用番号 `[1]` `[2]` などは本文中にそのまま残す
-- 参考文献は `references` 配列として分離する
-- `references` は、引用番号ごとに `id` と `text` を持つオブジェクト配列にする
-- `id` は文字列ではなく数値にする
-- `text` には文献番号 `[1]` などを含めず、文献本文のみを入れる
-- 本文中で引用されている文献のみ `references` に含める
-- 使用されていない参考文献は含めない
-- JavaScriptとしてそのまま貼り付けられる形式で出力する
-- 文字列はダブルクォーテーション `"` で囲む
-- 改行は `\n` として表現する
-- 余計な説明文は出力せず、コードブロックのみ出力する
-- 概要タブは2〜4文ごとに空行を入れる
-- 豆知識タブは各見出しの前後に空行を入れる
-- 1段落は最大3文程度とする
-- React表示を前提に \n\n を用いて読みやすく整形する
+- JavaScriptコードのみ出力する
+- 解説文は不要
+- markdownは使用しない
+- コードブロックのみ出力する
+- 入力された内容以外を追加しない
+- 推測禁止
+- 参考文献番号は本文中のまま保持する
+- overview と tips の文章は改変しない
+- 改行位置のみ整形可
+
+---
 
 # 出力形式
 
-以下の形式で出力してください。
+以下の構造に従う。
 
-```js
+export const ○○Scale = {
+id: "",
+
+title: "",
+
+shortTitle: "",
+
+headerTitle: "",
+
+category: "",
+
+categories: [],
+
+tags: [],
+
+showTotal: false,
+
 tabs: {
-  overview:
-    "概要タブの本文をここに入力",
-
-  tips:
-    "豆知識タブの本文をここに入力",
+overview: "",
+tips: "",
 },
 
 references: [
-  {
-    id: 1,
-    text: "著者. タイトル. 雑誌名. 年;巻(号):頁."
-  },
-  {
-    id: 2,
-    text: "著者. タイトル. 雑誌名. 年;巻(号):頁."
-  }
+{
+id: 1,
+citation: "",
+},
 ],
+
+domains: [
+{
+id: "summary",
+
+```
+  title: "評価概要",
+
+  description:
+    "評価法の概要を確認します。",
+
+  items: [
+    {
+      id: "purpose",
+
+      label: "評価目的",
+
+      type: "text",
+
+      description:
+        "評価対象や用途を確認します。",
+    },
+
+    {
+      id: "cutoff",
+
+      label: "カットオフ値",
+
+      type: "text",
+
+      description:
+        "臨床的に重要な基準値を確認します。",
+    },
+
+    {
+      id: "prognosis",
+
+      label: "予後予測",
+
+      type: "text",
+
+      description:
+        "予後との関連を確認します。",
+    },
+
+    {
+      id: "mcid",
+
+      label: "MCID・MDC",
+
+      type: "text",
+
+      description:
+        "臨床的に意味のある変化量を確認します。",
+    },
+  ],
+},
 ```
 
-# 注意事項
+],
+};
 
-- `tips` には「参考文献」見出しと参考文献本文を入れない
-- `references` に分離する
-- `overview` と `tips` の本文中にある `[1]` `[2]` などの引用番号は削除しない
-- `references` の `id` は本文中の引用番号と対応させる
-- 引用番号の順番は、本文中で登場する順ではなく、元の参考文献番号順でよい
-- 文献番号の欠番があってもよい
-- 文献本文にダブルクォーテーションが含まれる場合は `\"` にエスケープする
-- 日本語の鉤括弧「」や全角括弧（）はそのままでよい
+---
+
+# category の設定
+
+以下から最も適切なものを選択する。
+
+- consciousness
+- motor-function
+- upper-limb-function
+- mobility-gait
+- balance-posture
+- tone-spasticity
+- sensory-pain
+- higher-brain-function
+- language-communication
+- swallowing-nutrition
+- bladder-bowel
+- adl-iadl
+- qol-psychology
+- cardiopulmonary
+- stroke
+- spinal-cord-injury
+- parkinson-disease
+- orthopedic
+- neuromuscular
+- amputation
+
+---
+
+# tags
+
+以下を参考に自動生成する。
+
+- 評価対象
+- 疾患名
+- 職種
+- 使用場面
+
+例：
+
+[
+"歩行",
+"転倒",
+"脳卒中",
+"高齢者",
+"PT",
+"OT",
+"医師",
+"回復期"
+]
+
+---
+
+# references
+
+入力された参考文献を全て変換する。
+
+例：
+
+references: [
+{
+id: 1,
+citation:
+"Berg K, et al. Measuring balance in the elderly. Can J Public Health. 1992.",
+},
+]
+
+---
 
 # アプリ表示用データ
 
-ここにアプリ表示用データを貼り付ける。
+【ここに概要タブ・豆知識タブ・参考文献を貼り付ける】
