@@ -1084,3 +1084,8 @@ button {
 .reference-items li {
   margin-bottom: 8px;
 }
+
+.overview-content,
+.tips-content {
+  white-space: pre-wrap;
+}
