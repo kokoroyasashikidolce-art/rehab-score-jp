@@ -19,6 +19,7 @@ import { fmaScale } from "./fma";
 import { mmtScale } from "./mmt";
 import { nihssScale } from "./nihss";
 
+import { fmaueScale } from "./fmaue";
 import { aratScale } from "./arat";
 import { stefScale } from "./stef";
 import { boxBlockTestScale } from "./boxBlockTest";
@@ -28,6 +29,8 @@ import { malScale } from "./mal.js";
 import { mftScale } from "./mft";
 import { dashScale } from "./dash";
 import { jthftScale } from "./jthft";
+
+import { fmaleScale } from "./fmale";
 import { facScale } from "./fac";
 import { tugScale } from "./tug";
 import { tenMeterWalkTestScale } from "./tenMeterWalkTest";
@@ -102,6 +105,7 @@ import { wabScale } from "./wab";
 import { dysarthriaAssessmentScale } from "./dysarthriaAssessment";
 import { fda2Scale } from "./fda2";
 
+
 export const scales = [
   jcsScale,
   gcsScale,
@@ -117,6 +121,7 @@ export const scales = [
   mmtScale,
   nihssScale,
 
+  fmaueScale,
   aratScale,
   stefScale,
   boxBlockTestScale,
@@ -127,6 +132,7 @@ export const scales = [
   dashScale,
   jthftScale,
 
+  fmaleScale,
   facScale,
   tugScale,
   tenMeterWalkTestScale,
