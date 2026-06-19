@@ -104,7 +104,8 @@ import { sltaScale } from "./slta";
 import { wabScale } from "./wab";
 import { dysarthriaAssessmentScale } from "./dysarthriaAssessment";
 import { fda2Scale } from "./fda2";
-
+import { cadlScale } from "./cadl";
+import { cetiScale } from "./ceti";
 
 export const scales = [
   jcsScale,
@@ -215,6 +216,8 @@ export const scales = [
   wabScale,
   dysarthriaAssessmentScale,
   fda2Scale,
+  cadlScale,
+  cetiScale,
 
   fimScale,
   biScale,
