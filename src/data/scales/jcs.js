@@ -1,3 +1,4 @@
+
 export const jcsScale = {
   id: "jcs",
   title: "Japan Coma Scale",
@@ -26,11 +27,44 @@ export const jcsScale = {
 
   tabs: {
     overview:
-      "JCSは、日本で広く用いられる意識障害の評価尺度です。覚醒の程度と刺激への反応から、1桁・2桁・3桁で意識レベルを表します。",
+      "JCS（Japan Coma Scale）は、日本で広く用いられている意識障害評価尺度であり、覚醒状態と刺激への反応性から意識レベルを評価する。[1-5]\n\nJCS 0、1、2、3、10、20、30、100、200、300の10段階で構成され、数値が大きいほど意識障害が重いことを示す。[1-5]\n\n救急外来、脳卒中急性期、外傷初期評価、病院前救護などで迅速な重症度評価に用いられる。[2-5]\n\n成人外傷では院内死亡予測AUROCが0.874とGCS（0.878）と同等の予測性能を示した。[3]\n\n脳卒中や外傷における急性期重症度評価および予後予測因子として有用である。[2-5]",
 
     tips:
-      "JCSは急性期・救急・脳卒中診療などでよく使われます。記録では 0、I-1、II-10、III-100 などの形で表記されます。",
+      "【類似評価との違い】\nGCSは開眼・言語・運動反応の3項目で評価するのに対し、JCSは覚醒反応を中心とした単一軸評価であり、より簡便かつ迅速に実施できる。[3]\n\n一方で、運動反応や言語反応などの詳細な神経学的情報は得られない。[3,5]\n\n救急現場や脳卒中急性期での迅速な情報共有に適している。[2-5]\n\n【予後予測】\n脳卒中13,788例を対象としたコホート研究では、発症時JCSが脳卒中後のADLや死亡などのアウトカムと関連した。[2]\n\nまた、非致死性初発脳卒中1,880例の研究では、入院時JCS高値が5年死亡リスク上昇と関連した。[4]\n\n成人外傷222,540例を対象とした日本外傷データバンク研究では、院内死亡予測AUROCは0.874であり、GCSの0.878とほぼ同等であった。[3]\n\nさらに4分類JCSでは、JCS 0を基準として院内死亡の調整オッズ比は1桁で2.31、2桁で4.81、3桁で27.88であった。[3]\n\n一方、歩行自立、上肢機能、嚥下機能、排泄機能などを直接予測する標準的研究は確認されていない。[1-5]\n\n【臨床上の注意点】\nJCSは順序尺度であり、数値間の差を等間隔として解釈してはならない。[1-5]\n\nJCS 0でも軽度認知障害や高次脳機能障害は評価できず天井効果がある。[1-5]\n\n一方、JCS 300では脳幹反射や呼吸状態などの詳細な神経学的重症度を表現できない。[1-5]\n\n脳卒中ではNIHSSなどの神経学的評価尺度との併用が望ましい。[7]",
   },
+
+  references: [
+    {
+      id: 1,
+      citation:
+        "太田富雄，和賀志朗，半田肇，他．意識障害の新しい分類法試案―数量的表現（III群3段階方式）の可能性．脳神経外科．1974;2(9):623-627.",
+    },
+    {
+      id: 2,
+      citation:
+        "Shigematsu K, Nakano H, Watanabe Y. The eye response test alone is sufficient to predict stroke outcome—reintroduction of Japan Coma Scale: a cohort study. BMJ Open. 2013;3:e002736.",
+    },
+    {
+      id: 3,
+      citation:
+        "Yumoto T, Naito H, Yorifuji T, Aokage T, Fujisaki N, Nakao A. Association of Japan Coma Scale score on hospital arrival with in-hospital mortality among trauma patients. BMC Emerg Med. 2019;19:65.",
+    },
+    {
+      id: 4,
+      citation:
+        "Takashima N, Arima H, Kita Y, et al. Long-term survival after stroke in 1.4 million Japanese population: Shiga Stroke Registry. J Stroke. 2020;22(3):336-344.",
+    },
+    {
+      id: 5,
+      citation:
+        "Nakajima M, et al. Development and validation of a novel method for converting the Japan Coma Scale to Glasgow Coma Scale. J Epidemiol. 2023;33(10):531-535.",
+    },
+    {
+      id: 7,
+      citation:
+        "Lyden PD, Lu M, Levine SR, Brott TG, Broderick J; NINDS rtPA Stroke Study Group. A modified National Institutes of Health Stroke Scale for use in stroke clinical trials: preliminary reliability and validity. Stroke. 2001;32:1310-1317.",
+    },
+  ],
 
   domains: [
     {
