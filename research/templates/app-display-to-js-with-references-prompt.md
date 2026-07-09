@@ -55,3 +55,28 @@ citation:
 "Berg K, et al. Measuring balance in the elderly. Can J Public Health. 1992.",
 },
 ]
+
+＃references は必ず scale オブジェクト直下に配置する。
+tabs の中には入れない。
+
+正しい構造：
+
+tabs: {
+overview: "",
+tips: "",
+},
+
+references: [
+{
+id: 1,
+citation: "",
+},
+],
+
+誤った構造：
+
+tabs: {
+overview: "",
+tips: "",
+references: [],
+},
