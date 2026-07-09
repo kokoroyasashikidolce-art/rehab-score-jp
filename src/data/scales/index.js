@@ -10,7 +10,7 @@ import { gcsScale } from "./gcs";
 import { rassScale } from "./rass";
 import { crsrScale } from "./crsr";
 import { fourScoreScale } from "./fourScore";
-import { camIcuScale } from "./camIcu";
+import { camIcuScale } from "./camIcu.js";
 import { whimScale } from "./whim";
 
 import { brunnstromScale } from "./brunnstrom";
