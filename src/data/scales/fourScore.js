@@ -28,11 +28,34 @@ export const fourScoreScale = {
 
   tabs: {
     overview:
-      "FOUR scoreは、開眼、運動反応、脳幹反射、呼吸パターンの4領域で意識障害を評価する尺度です。",
+      "FOUR score（Full Outline of UnResponsiveness score）は、急性意識障害や昏睡患者の意識レベルを評価する尺度である。[1]\n\n眼反応、運動反応、脳幹反射、呼吸の4項目を各0〜4点、合計0〜16点で評価し、高得点ほど神経機能が保たれていることを示す。[1]\n\nICU、神経ICU、救急、脳卒中、外傷性脳損傷などの急性期で使用され、特に挿管患者でも評価可能な点が特徴である。[1-7]\n\n神経外科患者では退院時不良転帰予測のカットオフ14点（感度0.77、特異度0.95）、院内死亡予測のカットオフ10点（感度0.71、特異度0.93）が報告されている。[2]\n\n急性期の重症度評価や予後予測に有用な尺度である。[2-7]",
 
     tips:
-      "GCSと異なり、言語反応を含まないため、挿管中の患者でも評価しやすい点が特徴です。",
+      "【類似評価との違い】\nGCSは開眼・言語・運動反応の3項目で評価するが、挿管患者では言語反応が評価できない。[1]\n\nFOUR scoreは言語反応を含まず、脳幹反射と呼吸パターンを評価できるため、挿管患者や重症昏睡患者でも詳細な神経学的評価が可能である。[1]\n\n一方、慢性期の遷延性意識障害やMCS評価にはCRS-Rの方が適している。[11]\n\n【予後予測】\nFOUR scoreは死亡や不良転帰の予測に有用である。[2-7]\n\n神経外科患者304例の研究では、退院時不良転帰予測のAUCは0.88で、カットオフ14点は感度0.77、特異度0.95を示した。[2]\n\n院内死亡予測ではAUC 0.92、カットオフ10点で感度0.71、特異度0.93であった。[2]\n\n2025年のシステマティックレビューでは、FOUR scoreはGCSと同様に死亡・不良機能転帰と関連し、一部ではICU死亡予測でGCSを上回る可能性が示された。[7]\n\n一方、歩行、ADL、上肢機能、嚥下、排泄、在宅復帰などのリハビリテーション予後を直接予測する標準的研究は確認されていない。[1-7]\n\n【臨床上の注意点】\nFOUR scoreは脳幹反射や呼吸を評価できる一方、それらの判定には訓練が必要である。[1,7]\n\n鎮静薬、筋弛緩薬、低体温、薬物中毒、代謝異常はスコアを低下させるため解釈に注意する。[7]\n\nFOUR score 0は切迫脳死を示唆し得るが脳死診断そのものではない。[7]\n\nまた16点でもせん妄や高次脳機能障害、軽度認知障害は評価できない。[1,7]",
   },
+
+  references: [
+    {
+      id: 1,
+      citation:
+        "Wijdicks EFM, Bamlet WR, Maramattom BV, Manno EM, McClelland RL. Validation of a new coma scale: The FOUR score. Ann Neurol. 2005;58(4):585-593.",
+    },
+    {
+      id: 2,
+      citation:
+        "Akavipat P, Sookplung P, Kaewsingha P, Maunsaiyat P. Prediction of discharge outcome with the Full Outline of UnResponsiveness (FOUR) score in neurosurgical patients. Acta Med Okayama. 2011;65(3):205-210.",
+    },
+    {
+      id: 7,
+      citation:
+        "Schey JE, Snowdon DA, Green RS. The predictive validity of the Full Outline of UnResponsiveness score compared to the Glasgow Coma Scale in the intensive care unit: a systematic review. Neurocrit Care. 2025;42:116-128.",
+    },
+    {
+      id: 11,
+      citation:
+        "Giacino JT, Kalmar K, Whyte J. The JFK Coma Recovery Scale-Revised: measurement characteristics and diagnostic utility. Arch Phys Med Rehabil. 2004;85(12):2020-2029.",
+    },
+  ],
 
   domains: [
     {
